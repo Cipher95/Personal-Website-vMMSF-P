@@ -20,8 +20,10 @@
 
 body {
     font-family: var(--font-body);
-    background-color: #111;
-	//background-image: url('Mmsf-pegasus-magic.webp');
+	background-image: url('Mmsf-pegasus-magic.webp');
+	background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     display: flex;
     justify-content: center;
     align-items: center;
