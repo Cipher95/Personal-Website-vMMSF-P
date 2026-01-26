@@ -262,7 +262,7 @@ document.addEventListener('DOMContentLoaded', () => {
         submitBtn.textContent = "THINKING...";
         responseContainer.textContent = "Connecting to the AI, please wait...";
         try {
-            const response = await fetch('https://personal-website-backend.halobaidan95.repl.co/api/gemini', {
+            const response = await fetch('https://954927c1-6f5f-4500-a6c4-b6c653965ac8-00-2f1g5gu0csdjw.pike.replit.dev/api/gemini', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ prompt: prompt }),
