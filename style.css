@@ -1,0 +1,292 @@
+/* --- Mega Man Star Force Theme --- */
+
+:root {
+    --mmsf-bg: #031a43;
+    --mmsf-dark-blue: #0058a8;
+    --mmsf-light-blue: #84a2d3;
+    --mmsf-gold: #ffc600;
+    --mmsf-text-white: #ffffff;
+    --mmsf-text-black: #000000;
+    --font-title: 'Press Start 2P', cursive;
+    --font-body: 'VT323', monospace;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    image-rendering: pixelated; /* Makes images look crisp and pixely */
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: #111;
+	//background-image: url('Mmsf-pegasus-magic.webp');
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    color: var(--mmsf-text-white);
+}
+
+.mmsf-screen {
+    width: 100%;
+    max-width: 960px;
+    background-color: var(--mmsf-bg);
+    border: 3px solid var(--mmsf-light-blue);
+    box-shadow: 0 0 10px 3px #00aaff;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* --- Header --- */
+.mmsf-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 15px;
+    background-color: var(--mmsf-dark-blue);
+    border-bottom: 3px solid var(--mmsf-light-blue);
+    font-family: var(--font-title);
+    font-size: 14px;
+}
+
+#main-title {
+    background-color: var(--mmsf-gold);
+    color: var(--mmsf-text-black);
+    padding: 5px 10px;
+}
+
+.header-right {
+    text-align: right;
+    font-size: 12px;
+}
+#clock { font-size: 14px; }
+
+/* --- Main Content Area --- */
+main#content-area {
+    padding: 20px;
+    flex-grow: 1;
+    min-height: 300px; /* Ensure content area has some space */
+    transition: opacity 0.3s ease-in-out;
+}
+main#content-area.fade-out { opacity: 0; }
+
+.content-wrapper {
+    display: flex;
+    gap: 20px;
+}
+
+.content-image {
+    flex-shrink: 0;
+    width: 250px;
+    
+}
+
+.content-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+	border: 2px solid var(--mmsf-light-blue);
+    background-color: var(--mmsf-text-black);
+}
+
+.content-text {
+    background-color: rgba(0,0,0,0.3);
+    padding: 15px;
+}
+
+.content-text h2 {
+    font-family: var(--font-title);
+    color: var(--mmsf-gold);
+    font-size: 18px;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px var(--mmsf-text-black);
+}
+
+.content-text p, .content-text li, .project-card p {
+    font-size: 22px; /* VT323 font needs to be larger to be readable */
+    line-height: 1.4;
+    margin-bottom: 15px;
+}
+
+/* --- Navigation Buttons --- */
+.mmsf-nav {
+    padding: 15px;
+    border-top: 3px solid var(--mmsf-light-blue);
+    background-color: rgba(0,0,0,0.2);
+}
+.nav-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+}
+
+.mmsf-button {
+    text-align: center;
+    border: 3px solid var(--mmsf-text-black);
+    border-top-color: var(--mmsf-text-white);
+    border-left-color: var(--mmsf-text-white);
+}
+.mmsf-button.blue { background-color: var(--mmsf-dark-blue); }
+.mmsf-button.gold { background-color: var(--mmsf-gold); }
+
+.mmsf-button a {
+    display: block;
+    padding: 12px 5px;
+    font-family: var(--font-title);
+    font-size: 16px;
+    color: var(--mmsf-text-white);
+    text-decoration: none;
+    text-shadow: 2px 2px var(--mmsf-text-black);
+    transition: background-color 0.2s;
+}
+.mmsf-button.gold a { color: var(--mmsf-text-black); text-shadow: 1px 1px var(--mmsf-text-white); }
+.mmsf-button a:hover { background-color: rgba(255,255,255,0.2); }
+
+.mmsf-button a.active {
+    background-color: var(--mmsf-light-blue);
+    color: var(--mmsf-text-black);
+}
+.mmsf-button.gold a.active {
+    background-color: #fff;
+}
+
+/* --- Footer Status Bar --- */
+.mmsf-status-bar {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 15px;
+    background-color: var(--mmsf-dark-blue);
+    border-top: 3px solid var(--mmsf-light-blue);
+    font-family: var(--font-body);
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* --- Gemini AI Interface Styling --- */
+#gemini-prompt {
+    width: 100%;
+    min-height: 120px;
+    padding: 10px;
+    background-color: #000;
+    border: 2px solid var(--mmsf-light-blue);
+    color: var(--mmsf-text-white);
+    font-family: var(--font-body);
+    font-size: 20px;
+    resize: vertical;
+    margin-bottom: 15px;
+}
+
+#gemini-submit-btn {
+    width: 100%;
+    padding: 12px 20px;
+    font-family: var(--font-title);
+    font-size: 16px;
+    color: var(--mmsf-text-white);
+    text-shadow: 2px 2px var(--mmsf-text-black);
+    background-color: var(--mmsf-dark-blue);
+    border: 3px solid var(--mmsf-text-black);
+    border-top-color: var(--mmsf-text-white);
+    border-left-color: var(--mmsf-text-white);
+    cursor: pointer;
+}
+#gemini-submit-btn:disabled {
+    background-color: #555;
+    cursor: not-allowed;
+    color: #999;
+}
+
+#gemini-response {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: rgba(0,0,0,0.4);
+    border: 2px solid var(--mmsf-light-blue);
+    min-height: 50px;
+    white-space: pre-wrap;
+    font-size: 22px;
+}
+
+/* --- NEW: Back to Top Button --- */
+#back-to-top-btn {
+    display: none; /* Hidden by default */
+    position: fixed;
+    bottom: 90px; /* Position it above the chatbot button */
+    right: 20px;
+    z-index: 100;
+    background-color: var(--mmsf-dark-blue);
+    color: var(--mmsf-gold);
+    border: 2px solid var(--mmsf-light-blue);
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    font-family: var(--font-title);
+    font-size: 20px;
+    transition: opacity 0.3s, background-color 0.3s;
+    opacity: 0;
+}
+#back-to-top-btn.show {
+    display: block;
+    opacity: 1;
+}
+#back-to-top-btn:hover {
+    background-color: var(--mmsf-gold);
+    color: var(--mmsf-text-black);
+}
+
+/* --- CHATBOT RESTYLE --- */
+#chatbot-toggle-btn {
+    background-color: var(--mmsf-dark-blue);
+    border: 2px solid var(--mmsf-light-blue);
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 100;
+    cursor: pointer;
+}
+#chatbot-toggle-btn svg { fill: var(--mmsf-text-white); }
+
+#chatbot-popup {
+    display: none;
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    width: 350px;
+    max-height: 70vh;
+    background: var(--mmsf-bg);
+    border: 2px solid var(--mmsf-light-blue);
+    box-shadow: 0 0 10px 3px #00aaff;
+    flex-direction: column;
+}
+#chatbot-popup.active { display: flex; }
+#chatbot-header {
+    background: var(--mmsf-dark-blue);
+    padding: 10px;
+    font-family: var(--font-title);
+}
+#chatbot-header h2 { color: var(--mmsf-gold); font-size: 16px; }
+#chatbot-messages { flex-grow: 1; padding: 10px; overflow-y: auto; font-size: 18px; }
+.user-message { background-color: var(--mmsf-dark-blue); color: var(--mmsf-text-white); }
+.bot-message { background-color: #000; }
+#chatbot-input { background: #000; border: 1px solid var(--mmsf-light-blue); color: #fff; padding: 8px; font-size: 18px; }
+#chatbot-send-btn { background: var(--mmsf-dark-blue); color: #fff; border: 1px solid var(--mmsf-light-blue); font-family: var(--font-title); }
+
+/* --- Responsive adjustments --- */
+@media (max-width: 768px) {
+    .content-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+    .content-image {
+        width: 100%;
+        max-width: 250px;
+    }
+    .mmsf-header, .mmsf-status-bar {
+        font-size: 12px;
+    }
+}
