@@ -80,8 +80,12 @@ main#content-area.fade-out { opacity: 0; }
     display: flex;
     gap: 20px;
 }
-img {
+.small-data img {
   width: 100%;
+  height: auto;
+}
+.big-data img {
+  width: 50%;
   height: auto;
 }
 
