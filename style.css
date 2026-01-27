@@ -313,6 +313,13 @@ img {
     font-family: var(--font-title);
 }
 #chatbot-header h2 { color: var(--mmsf-gold); font-size: 16px; }
+#chatbot-close-btn {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 24px;
+    cursor: pointer;
+}
 #chatbot-messages { flex-grow: 1; padding: 10px; overflow-y: auto; font-size: 18px; }
 .user-message { background-color: var(--mmsf-dark-blue); color: var(--mmsf-text-white); }
 .bot-message { background-color: #000; }
