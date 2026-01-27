@@ -78,9 +78,13 @@ document.addEventListener('DOMContentLoaded', () => {
         },
 		others: {
             title: "Others",
-            image: "", 
+            image: "image_11~0.png", 
             content: `
-                
+                <div class="project-card">
+                    <h3></h3>
+                    <p></p>
+                    
+                </div>
             `
         }
     };
