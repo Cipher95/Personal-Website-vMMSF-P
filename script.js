@@ -35,6 +35,21 @@ document.addEventListener('DOMContentLoaded', () => {
                     <p>A retro-themed tribute to the 1995 PC gaming titan with classic MIDI audio.</p>
                     <a href="https://cipher95.github.io/MechWarrior-2-31st-Century-Combat/" target="_blank">View Project</a>
                 </div>
+				 <div class="project-card">
+                    <h3>Cipher | Personal Website</h3>
+                    <p>This is my main Personal Website.</p>
+                    <a href="https://cipher95.github.io/Personal-Website/" target="_blank">View Project</a>
+                </div>
+				<div class="project-card">
+                    <h3>SF Clan | Star Force</h3>
+                    <p>A fellowship of gamers dedicated to mastering the classics.</p>
+                    <a href="https://cipher95.github.io/SF-Clan/" target="_blank">View Project</a>
+                </div>
+				<div class="project-card">
+                    <h3>MMSF3 Grand Tournament 2026</h3>
+                    <p>The Tournament will start in First or Second February.</p>
+                    <a href="https://cipher95.github.io/MMSF3-Grand-Tournament-2026/" target="_blank">View Project</a>
+                </div>
             `
         },
 		videos: {
@@ -45,7 +60,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 { title: "Air Combat (Longplay)", videoId: "_lPGVdE__tc?si=vfKSK361wA9joT4T" },
                 { title: "Ace Combat 2 (Longplay)", videoId: "88CGhXFs5UA?si=iYLLaIPWT3wXjSsr" },
                 { title: "Sidewinder 2 (Longplay)", videoId: "bFZ-fx2ivsc?si=DCttmFGP7PLd2N8r" },
-				{ title: "Ace Combat 3 (Part 1/5)", videoId: "mqsrsvp90mg?si=SWRh75DpKMfh41an" }
+				{ title: "Ace Combat 3 (Part 1/5)", videoId: "mqsrsvp90mg?si=SWRh75DpKMfh41an" },
+				{ title: "Parsec (ePSXe) - ISS Pro Evolution (Cipher's Goals) [1 VS 1]", videoId: "TeSzwpSHjj8?si=lsZ7YtSMljsQU0U-" }
             ]
         },
         gemini: {
@@ -58,6 +74,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     <button id="gemini-submit-btn">Send to AI</button>
                     <div id="gemini-response">The AI's response will appear here...</div>
                 </div>
+            `
+        },
+		others: {
+            title: "Others",
+            image: "", 
+            content: `
+                
             `
         }
     };
@@ -244,6 +267,14 @@ document.addEventListener('DOMContentLoaded', () => {
         if (lowerCaseMessage.includes('website') || lowerCaseMessage.includes('project')) botMessage = "Cipher has worked on several projects, including websites for Mega Man Star Force and Ace Combat Zero. You can navigate to the 'Websites' page to see them all.";
         if (lowerCaseMessage.includes('video')) botMessage = "You can find a collection of retro gaming longplays and clips on the 'Videos' page.";
         if (lowerCaseMessage.includes('thank')) botMessage = "You're welcome!";
+		if (lowerCaseMessage.includes('how are you')) botMessage = "I'm a set of scripts and code, but I'm functioning perfectly! Thanks for asking. How can I assist you?";
+		if (lowerCaseMessage.includes('help') || lowerCaseMessage.includes('what can i ask')) botMessage = "You can ask me about Cipher, his web development projects, his video archives, or specific games like 'Mega Man' and 'Ace Combat'.";
+		if (lowerCaseMessage.includes('mega man')) botMessage = "Cipher has created two fan websites for the Mega Man Star Force series. You can find links to them on the 'Websites' page.";
+		if (lowerCaseMessage.includes('ace combat')) botMessage = "There's an immersive, story-focused website for 'Ace Combat Zero: The Belkan War' in the showcase. He also has longplays of several Ace Combat games in the 'Videos' section.";
+		if (lowerCaseMessage.includes('mechwarrior')) botMessage = "Yes, there is a retro-themed tribute site for 'MechWarrior 2: 31st Century Combat'. It even has the classic MIDI soundtrack!";
+		if (lowerCaseMessage.includes('skill') || lowerCaseMessage.includes('technolog')) botMessage = "Cipher specializes in front-end web development, creating dynamic and intelligent websites. The projects showcase skills in HTML, CSS, JavaScript, and UI/UX design.";
+		if (lowerCaseMessage.includes('contact') || lowerCaseMessage.includes('email')) botMessage = "I don't have access to Cipher's personal contact information. For now, the best way to see his work is by exploring this website.";
+		if (lowerCaseMessage.includes('bye') || lowerCaseMessage.includes('goodbye')) botMessage = "Goodbye! Feel free to ask if you have more questions.";
         
         setTimeout(() => { addMessage(botMessage, 'bot'); }, 500);
     }
