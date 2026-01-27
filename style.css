@@ -172,6 +172,26 @@ img {
     font-weight: bold;
 }
 
+.video-nav-btn {
+	text-align: center;
+    border: 3px solid var(--mmsf-text-black);
+    border-top-color: var(--mmsf-text-white);
+    border-left-color: var(--mmsf-text-white);
+	display: block;
+    padding: 12px 5px;
+    font-family: var(--font-title);
+    font-size: 16px;
+    color: var(--mmsf-text-white);
+    text-decoration: none;
+    text-shadow: 2px 2px var(--mmsf-text-black);
+    transition: background-color 0.2s;
+}
+.video-nav-btn:hover { background-color: rgba(255,255,255,0.2); }
+.video-nav-btn.active {
+    background-color: var(--mmsf-light-blue);
+    color: var(--mmsf-text-black);
+}
+
 /* --- Gemini AI Interface Styling --- */
 #gemini-prompt {
     width: 100%;
