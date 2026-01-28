@@ -80,14 +80,14 @@ main#content-area.fade-out { opacity: 0; }
     display: flex;
     gap: 20px;
 }
-.small-data img {
+img.small-data {
   width: 100%;
   height: auto;
 	display: block;
 	border: 2px solid var(--mmsf-light-blue);
     background-color: var(--mmsf-text-black);
 }
-.big-data img {
+img.big-data {
   width: 50%;
   height: auto;
 	display: block;
