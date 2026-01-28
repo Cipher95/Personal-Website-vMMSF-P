@@ -183,7 +183,6 @@ main#content-area.fade-out { opacity: 0; }
 }
 
 .video-nav-btn {
-	background-color: var(--mmsf-dark-blue);
 	text-align: center;
     border: 3px solid var(--mmsf-text-black);
     border-top-color: var(--mmsf-text-white);
@@ -196,6 +195,7 @@ main#content-area.fade-out { opacity: 0; }
     text-decoration: none;
     text-shadow: 2px 2px var(--mmsf-text-black);
     transition: background-color 0.2s;
+	background-color: var(--mmsf-dark-blue);
 }
 .video-nav-btn:hover { background-color: rgba(255,255,255,0.2); }
 .video-nav-btn.active {
