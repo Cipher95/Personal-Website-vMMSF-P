@@ -80,51 +80,51 @@ document.addEventListener('DOMContentLoaded', () => {
             title: "Others",
             image: "others/image_11~0.png", 
             content: `
-                <div class="project-card" class="small-data">
+                <div class="project-card">
 <h3>Captain Tsubasa: Dream Team (8TH Anniversary)</h3>
-<img src="others/CaptainTsubasaDreamTeam.jpg">
+<img src="others/CaptainTsubasaDreamTeam.jpg" class="small-data">
 
 <p>I played this game for eight years after it was released. I played actively for the first three years, then stopped because of the pay-to-win mechanics. Later, I came back just to have some fun.</p>
 </div>
 
-<div class="project-card" class="big-data">
+<div class="project-card">
 <h3>Roberto Hongo (Dream Festival) Version</h3>
-<img src="others/1stDraw.jpg">
+<img src="others/1stDraw.jpg" class="big-data">
 
 <p>I got Roberto Hongo (Dream Festival version) from the Super Dream Festival before the Anniversary started.</p>
 </div>
 
-<div class="project-card" class="big-data">
+<div class="project-card">
 <h3>Hikaru Matsuyama (Super Star) Version</h3>
-<img src="others/2ndDraw.jpg">
+<img src="others/2ndDraw.jpg" class="big-data">
 
 <p>I got Hikaru Matsuyama (Super Star version) from the Super Anniversary Transfer on my first draw, and when I continued drawing, I got nothing.</p>
 </div>
 
-<div class="project-card" class="big-data">
+<div class="project-card">
 <h3>Genzo Wakabayashi (Super Star) Version</h3>
-<img src="others/3rdDraw.jpg">
+<img src="others/3rdDraw.jpg" class="big-data">
 
 <p>I got Genzo Wakabayashi (Super Star version) from the Super Anniversary Transfer on my first draw, and then I had more good luck.</p>
 </div>
 
-<div class="project-card" class="big-data">
+<div class="project-card">
 <h3>Tsubasa Ozora (Dream Festival) Version</h3>
-<img src="others/4thDraw.jpg">
+<img src="others/4thDraw.jpg" class="big-data">
 
 <p>I got Tsubasa Ozora (Festival version) from the Super Anniversary Transfer on my second draw, and then I got a duplicate Genzo Wakabayashi (Super Star version) on the third draw.</p>
 </div>
 
-<div class="project-card" class="big-data">
+<div class="project-card">
 <h3>Taro Misaki (Dream Festival) Version</h3>
-<img src="others/5thDraw.jpg">
+<img src="others/5thDraw.jpg" class="big-data">
 
 <p>I got Taro Misaki (Festival version) from the Super Anniversary Transfer on my fourth draw, and after that my luck ran out.</p>
 </div>
 
-<div class="project-card" class="small-data">
+<div class="project-card">
 <h3>Formation</h3>
-<img src="others/Formation1.jpg">
+<img src="others/Formation1.jpg" class="small-data">
 
 <p>This is my formation: 4-2-3-1 (S) Gold Formation.
 I mainly use Japanese players, with two Brazilian players. I use three team skills to boost players’ stats by 90%.
@@ -133,44 +133,44 @@ I don’t have higher bond stats or meta players because I didn’t play the gam
 I’m using Roberto Hongo (old Dream Festival version) because the company buffed him, and he’s playable right now.</p>
 </div>
 
-<div class="project-card" class="small-data">
+<div class="project-card">
 <h3>Formation stats boost</h3>
-<img src="others/Formation2.jpg">
+<img src="others/Formation2.jpg" class="small-data">
 
 <p>This Gold Formation increases physical by 10% for Japanese and South American players. I’m playing Challenge Road to get another Gold Formation that increases physical by 12% and stamina by 10% for Japanese and South American players.</p>
 </div>
 
-<div class="project-card" class="big-data">
+<div class="project-card">
 <h3>Genzo Wakabayashi</h3>
-<img src="others/Wakabayashi1.jpg">
+<img src="others/Wakabayashi1.jpg" class="big-data">
 
 <p>My favorite Goalkeeper of all time.</p>
 </div>
 
-<div class="project-card" class="big-data">
+<div class="project-card">
 <h3>Hikaru Matsuyama</h3>
-<img src="others/Matsuyama1.jpg">
+<img src="others/Matsuyama1.jpg" class="big-data">
 
 <p>My favorite Defensive Midfielder of all time.</p>
 </div>
 
-<div class="project-card" class="big-data">
+<div class="project-card">
 <h3>Tsubasa Ozora</h3>
-<img src="others/TsubasaOzora1.jpg">
+<img src="others/TsubasaOzora1.jpg" class="big-data">
 
 <p>My favorite Player of all time.</p>
 </div>
 
-<div class="project-card" class="big-data">
+<div class="project-card">
 <h3>Taro Misaki</h3>
-<img src="others/Misaki1.jpg">
+<img src="others/Misaki1.jpg" class="big-data">
 
 <p>My favorite Attack Midfielder of all time.</p>
 </div>
 
-<div class="project-card" class="big-data">
+<div class="project-card">
 <h3>Roberto Hongo</h3>
-<img src="others/RobertoHongo1.jpg">
+<img src="others/RobertoHongo1.jpg" class="big-data">
 
 <p>My favorite Legend Player of all time.</p>
 </div>
