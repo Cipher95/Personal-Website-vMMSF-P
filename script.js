@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <img src="others/Formation1.jpg" class="small-data">
 
 <p>This is my formation: 4-2-3-1 (S) Gold Formation.
-I mainly use Japanese players, with two Brazilian players. I use three team skills to boost players’ stats by 90%.
+I mainly use Japanese players, with two Brazilian players. I use three team skills to boost players’ stats by 92%.
 For bonds, I have 81% stat increase and 4% shield.
 I don’t have higher bond stats or meta players because I didn’t play the game a lot. If you play more, you can do more transfer draws, and with good luck you can build a much better team than your old one.
 I’m using Roberto Hongo (old Dream Festival version) because the company buffed him, and he’s playable right now.</p>
@@ -137,7 +137,7 @@ I’m using Roberto Hongo (old Dream Festival version) because the company buffe
 <h3>Formation stats boost</h3>
 <img src="others/Formation2.jpg" class="small-data">
 
-<p>This Gold Formation increases physical by 10% for Japanese and South American players. I’m playing Challenge Road to get another Gold Formation that increases physical by 12% and stamina by 10% for Japanese and South American players.</p>
+<p>This Gold Formation increases physical by 12% and stamina by 10% for Japanese and South American players.</p>
 </div>
 
 <div class="project-card">
