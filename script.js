@@ -80,11 +80,100 @@ document.addEventListener('DOMContentLoaded', () => {
             title: "Others",
             image: "image_11~0.png", 
             content: `
-                <div class="project-card">
-                    <h3></h3>
-                    <p></p>
-                    
-                </div>
+                <div class="project-card" class="small-data">
+<h3>Captain Tsubasa: Dream Team (8TH Anniversary)</h3>
+<img src="CaptainTsubasaDreamTeam.jpg">
+
+<p>I played this game for eight years after it was released. I played actively for the first three years, then stopped because of the pay-to-win mechanics. Later, I came back just to have some fun.</p>
+</div>
+
+<div class="project-card" class="big-data">
+<h3>Roberto Hongo (Dream Festival) Version</h3>
+<img src="1stDraw.jpg">
+
+<p>I got Roberto Hongo (Dream Festival version) from the Super Dream Festival before the Anniversary started.</p>
+</div>
+
+<div class="project-card" class="big-data">
+<h3>Hikaru Matsuyama (Super Star) Version</h3>
+<img src="2ndDraw.jpg">
+
+<p>I got Hikaru Matsuyama (Super Star version) from the Super Anniversary Transfer on my first draw, and when I continued drawing, I got nothing.</p>
+</div>
+
+<div class="project-card" class="big-data">
+<h3>Genzo Wakabayashi (Super Star) Version</h3>
+<img src="3rdDraw.jpg">
+
+<p>I got Genzo Wakabayashi (Super Star version) from the Super Anniversary Transfer on my first draw, and then I had more good luck.</p>
+</div>
+
+<div class="project-card" class="big-data">
+<h3>Tsubasa Ozora (Dream Festival) Version</h3>
+<img src="4thDraw.jpg">
+
+<p>I got Tsubasa Ozora (Festival version) from the Super Anniversary Transfer on my second draw, and then I got a duplicate Genzo Wakabayashi (Super Star version) on the third draw.</p>
+</div>
+
+<div class="project-card" class="big-data">
+<h3>Taro Misaki (Dream Festival) Version</h3>
+<img src="5thDraw.jpg">
+
+<p>I got Taro Misaki (Festival version) from the Super Anniversary Transfer on my fourth draw, and after that my luck ran out.</p>
+</div>
+
+<div class="project-card" class="small-data">
+<h3>Formation</h3>
+<img src="Formation1.jpg">
+
+<p>This is my formation: 4-2-3-1 (S) Gold Formation.
+I mainly use Japanese players, with two Brazilian players. I use three team skills to boost players’ stats by 90%.
+For bonds, I have 81% stat increase and 4% shield.
+I don’t have higher bond stats or meta players because I didn’t play the game a lot. If you play more, you can do more transfer draws, and with good luck you can build a much better team than your old one.
+I’m using Roberto Hongo (old Dream Festival version) because the company buffed him, and he’s playable right now.</p>
+</div>
+
+<div class="project-card" class="small-data">
+<h3>Formation stats boost</h3>
+<img src="Formation2.jpg">
+
+<p>This Gold Formation increases physical by 10% for Japanese and South American players. I’m playing Challenge Road to get another Gold Formation that increases physical by 12% and stamina by 10% for Japanese and South American players.</p>
+</div>
+
+<div class="project-card" class="big-data">
+<h3>Genzo Wakabayashi</h3>
+<img src="Wakabayashi1.jpg">
+
+<p>My favorite Goalkeeper of all time.</p>
+</div>
+
+<div class="project-card" class="big-data">
+<h3>Hikaru Matsuyama</h3>
+<img src="Matsuyama1.jpg">
+
+<p>My favorite Defensive Midfielder of all time.</p>
+</div>
+
+<div class="project-card" class="big-data">
+<h3>Tsubasa Ozora</h3>
+<img src="TsubasaOzora1.jpg">
+
+<p>My favorite Player of all time.</p>
+</div>
+
+<div class="project-card" class="big-data">
+<h3>Taro Misaki</h3>
+<img src="Misaki1.jpg">
+
+<p>My favorite Attack Midfielder of all time.</p>
+</div>
+
+<div class="project-card" class="big-data">
+<h3>Roberto Hongo</h3>
+<img src="RobertoHongo1.jpg">
+
+<p>My favorite Legend Player of all time.</p>
+</div>
             `
         }
     };
