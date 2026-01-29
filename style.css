@@ -246,12 +246,10 @@ img.big-data {
     font-size: 22px;
 }
 
-/* --- NEW: Back to Top Button --- */
-#back-to-top-btn {
+/* --- SCROLL BUTTONS --- */
+#back-to-top-btn, #scroll-to-bottom-btn {
     display: none; /* Hidden by default */
     position: fixed;
-    bottom: 90px; /* Position it above the chatbot button */
-    right: 20px;
     z-index: 100;
     background-color: var(--mmsf-dark-blue);
     color: var(--mmsf-gold);
@@ -264,11 +262,24 @@ img.big-data {
     transition: opacity 0.3s, background-color 0.3s;
     opacity: 0;
 }
-#back-to-top-btn.show {
+
+#back-to-top-btn {
+    bottom: 90px;
+    right: 20px;
+}
+
+/* NEW: Scroll to Bottom Button styles */
+#scroll-to-bottom-btn {
+    bottom: 90px;
+    left: 20px;
+}
+
+#back-to-top-btn.show, #scroll-to-bottom-btn.show {
     display: block;
     opacity: 1;
 }
-#back-to-top-btn:hover {
+
+#back-to-top-btn:hover, #scroll-to-bottom-btn:hover {
     background-color: var(--mmsf-gold);
     color: var(--mmsf-text-black);
 }
