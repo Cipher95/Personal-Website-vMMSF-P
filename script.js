@@ -185,6 +185,8 @@ I’m using Roberto Hongo (old Dream Festival version) because the company buffe
     const dateDayElement = document.getElementById('date-day');
     // --- NEW: Selector for the back to top button
     const backToTopBtn = document.getElementById('back-to-top-btn');
+	 // --- NEW: Selector for the scroll to bottom button ---
+    const scrollToBottomBtn = document.getElementById('scroll-to-bottom-btn');
 
 	 // --- FUNCTIONS ---
 
@@ -284,26 +286,43 @@ I’m using Roberto Hongo (old Dream Festival version) because the company buffe
         dateDayElement.textContent = dateDayString;
     }
 
-    // --- NEW: Back to Top Button Functions ---
+     // --- NEW: Combined Scroll Button Logic ---
     /**
-     * Shows or hides the 'back to top' button based on scroll position.
+     * Shows or hides the scroll buttons based on the user's scroll position.
      */
-    function handleBackToTopButton() {
-        if (window.scrollY > 200 || document.documentElement.scrollTop > 200) {
+    function handleScrollButtons() {
+        const scrollTop = window.scrollY || document.documentElement.scrollTop;
+        const scrollHeight = document.documentElement.scrollHeight;
+        const clientHeight = document.documentElement.clientHeight;
+
+        // Show "Back to Top" button if user has scrolled down
+        if (scrollTop > 200) {
             backToTopBtn.classList.add('show');
         } else {
             backToTopBtn.classList.remove('show');
         }
+
+        // Show "Scroll to Bottom" button if user is not at the bottom
+        // (with a 50px buffer to prevent flickering)
+        if (scrollTop + clientHeight < scrollHeight - 50) {
+            scrollToBottomBtn.classList.add('show');
+        } else {
+            scrollToBottomBtn.classList.remove('show');
+        }
     }
 
-    /**
+     /**
      * Smoothly scrolls the window to the top.
      */
     function scrollToTop() {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    /**
+     * NEW: Smoothly scrolls the window to the bottom.
+     */
+    function scrollToBottom() {
+        window.scrollTo({ top: document.documentElement.scrollHeight, behavior: 'smooth' });
     }
 
      // --- CHATBOT FUNCTIONALITY ---
@@ -423,9 +442,10 @@ I’m using Roberto Hongo (old Dream Festival version) because the company buffe
         }
     });
 
-    // --- NEW: Add event listeners for the back to top button ---
-    window.addEventListener('scroll', handleBackToTopButton);
+    // --- NEW: Add event listeners for BOTH scroll buttons ---
+    window.addEventListener('scroll', handleScrollButtons);
     backToTopBtn.addEventListener('click', scrollToTop);
+    scrollToBottomBtn.addEventListener('click', scrollToBottom);
     
     // Initialize the page
     switchContent('home');
