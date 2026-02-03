@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
             title: "Gemini AI",
             image: "UNMMSF3Gemini.webp", // A futuristic AI-themed image
             content: `
-                <p>Interact directly with a powerful AI. This interface is connected to the Gemini 1.5 Pro model via a secure backend.</p>
+                <p>Interact directly with a powerful AI. This interface is connected to the Gemini 1.5 Flash model via a secure backend.</p>
                 <div id="gemini-container">
                     <textarea id="gemini-prompt" placeholder="Enter your prompt for Gemini..."></textarea>
                     <button id="gemini-submit-btn">Send to AI</button>
