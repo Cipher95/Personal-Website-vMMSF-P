@@ -163,8 +163,8 @@ document.addEventListener('DOMContentLoaded', () => {
 </div>
 
 <div class="project-card">
-<h3>Radonga</h3>
-<img src="others/Radonga.jpg" class="big-data">
+<h3>Radunga</h3>
+<img src="others/Radunga.jpg" class="big-data">
 
 <p>My favorite Defend of all time.</p>
 </div>
