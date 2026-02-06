@@ -195,7 +195,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <img src="others/RobertoHongo1.jpg" class="big-data">
 <img src="others/RobertoHongo2.jpg" class="big-data">
 
-<p>My favorite Legend Player of all time.</p>
+<p>My favorite Legendary Player of all time.</p>
 </div>
             `
         }
