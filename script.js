@@ -128,21 +128,31 @@ document.addEventListener('DOMContentLoaded', () => {
 </div>
 
 <div class="project-card">
-<h3>Formation</h3>
-<img src="others/Formation1.jpg" class="small-data">
+<h3>Radunga (Dream Collection) Version</h3>
+<img src="others/6thDraw.jpg" class="big-data">
 
-<p>This is my formation: 4-2-3-1 (S) Gold Formation.
-I mainly use Japanese players, with two Brazilian players. I use three team skills to boost players’ stats by 92%.
-For bonds, I have 81% stat increase and 4% shield.
-I don’t have higher bond stats or meta players because I didn’t play the game a lot. If you play more, you can do more transfer draws, and with good luck you can build a much better team than your old one.
-I’m using Roberto Hongo (old Dream Festival version) because the company buffed him, and he’s playable right now.</p>
+<p>I got Radunga (Dream Collection version) from the Valentine’s Dream Transfer on my first draw, so I stopped because I didn’t have enough Dream Balls to keep going.</p>
 </div>
 
 <div class="project-card">
-<h3>Formation stats boost</h3>
-<img src="others/Formation2.jpg" class="small-data">
+<h3>Main Team</h3>
+<img src="others/Formation1-1.jpg" class="small-data">
+
+<p>This is my main team. The formation I'm using is: 4-2-3-1 (S) Gold Formation. I mainly use Japanese players, with two Brazilian players. I use three team skills to boost players’ stats by 92%. For bonds, I have 81% stat increase and 4% shield. I don’t have higher bond stats or meta players because I didn’t play the game a lot. If you play more, you can do more transfer draws, and with good luck you can build a much better team than your old one. I’m using Roberto Hongo (old Dream Festival version) because the company buffed him, and he’s playable right now.</p>
+</div>
+
+<div class="project-card">
+<h3>Formation</h3>
+<img src="others/Formation1-2.jpg" class="small-data">
 
 <p>This Gold Formation increases physical by 12% and stamina by 10% for Japanese and South American players.</p>
+</div>
+
+<div class="project-card">
+<h3>Second Team</h3>
+<img src="others/Formation2.jpg" class="small-data">
+
+<p>This is my second team. I’m using the same formation as my main team. I mainly use South American players, with two Japanese players. I use three team skills that boost stats by 86%. For bonds, I have an 81.5% stat increase and a 10.5% shield.</p>
 </div>
 
 <div class="project-card">
@@ -150,6 +160,13 @@ I’m using Roberto Hongo (old Dream Festival version) because the company buffe
 <img src="others/Wakabayashi1.jpg" class="big-data">
 
 <p>My favorite Goalkeeper of all time.</p>
+</div>
+
+<div class="project-card">
+<h3>Radonga</h3>
+<img src="others/Radonga.jpg" class="big-data">
+
+<p>My favorite Defend of all time.</p>
 </div>
 
 <div class="project-card">
@@ -176,6 +193,7 @@ I’m using Roberto Hongo (old Dream Festival version) because the company buffe
 <div class="project-card">
 <h3>Roberto Hongo</h3>
 <img src="others/RobertoHongo1.jpg" class="big-data">
+<img src="others/RobertoHongo2.jpg" class="big-data">
 
 <p>My favorite Legend Player of all time.</p>
 </div>
