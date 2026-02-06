@@ -47,8 +47,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
 				<div class="project-card">
                     <h3>MMSF3 Grand Tournament 2026</h3>
-                    <p>The Tournament will start in First or Second February.</p>
+                    <p>This event has been canceled. I created a new URL for the new tournament.</p>
                     <a href="https://cipher95.github.io/MMSF3-Grand-Tournament-2026/" target="_blank">View Project</a>
+                </div>
+				<div class="project-card">
+                    <h3>MMSF3 Ranking Tournament 2026</h3>
+                    <p>The event is still going.</p>
+                    <a href="https://cipher95.github.io/MMSF3-Ranking-Tournament-2026/" target="_blank">View Project</a>
                 </div>
             `
         },
