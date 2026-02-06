@@ -152,7 +152,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <h3>Second Team</h3>
 <img src="others/Formation2.jpg" class="small-data">
 
-<p>This is my second team. I’m using the same formation as my main team. I mainly use South American players, with two Japanese players. I use three team skills that boost stats by 86%. For bonds, I have an 81.5% stat increase and a 10.5% shield.</p>
+<p>This is my second team. I’m using the same formation as my main team. I mainly use South American players, with three Japanese players. I use three team skills that boost stats by 86%. For bonds, I have an 81.5% stat increase and a 10.5% shield.</p>
 </div>
 
 <div class="project-card">
