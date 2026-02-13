@@ -95,8 +95,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     id: 'CaptainTsubasaDreamTeam',
                     title: 'Captain Tsubasa: Dream Team (8TH Anniversary)',
                     image: 'others/CaptainTsubasaDreamTeam.jpg',
-                    description: '<div class="project-card">
-
+                    description: '
+						<div class="project-card">
 <p>I played this game for eight years after it was released. I played actively for the first three years, then stopped because of the pay-to-win mechanics. Later, I came back just to have some fun.</p>
 </div>
 
