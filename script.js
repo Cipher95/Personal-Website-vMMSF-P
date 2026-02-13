@@ -97,6 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     image: 'others/CaptainTsubasaDreamTeam.jpg',
                     description: `
 						<div class="project-card">
+						<img src="others/CaptainTsubasaDreamTeam.jpg" class="big-data">
 <p>I played Captain Tsubasa: Dream Team for eight years after it was released. I played actively for the first three years, then stopped because of the pay-to-win mechanics. Later, I came back just to have some fun.</p>
 </div>
 
@@ -301,9 +302,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 ${navButtonsHTML}
             </div>
             <div class="others-content-display">
-                <div class="others-content-image">
-                    <img id="others-game-image" src="${firstGame.image}" alt="${firstGame.title}">
-                </div>
+                
                 <div id="others-game-description" class="others-content-text">
                     ${firstGame.description}
                 </div>
