@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     image: 'others/CaptainTsubasaDreamTeam.jpg',
                     description: `
 						<div class="project-card">
-<p>I played this game for eight years after it was released. I played actively for the first three years, then stopped because of the pay-to-win mechanics. Later, I came back just to have some fun.</p>
+<p>I played Captain Tsubasa: Dream Team for eight years after it was released. I played actively for the first three years, then stopped because of the pay-to-win mechanics. Later, I came back just to have some fun.</p>
 </div>
 
 <div class="project-card">
