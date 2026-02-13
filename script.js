@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', () => {
 
     // --- DATA STORE ---
@@ -66,6 +67,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 { title: "Ace Combat 2 (Longplay)", videoId: "88CGhXFs5UA?si=iYLLaIPWT3wXjSsr" },
                 { title: "Sidewinder 2 (Longplay)", videoId: "bFZ-fx2ivsc?si=DCttmFGP7PLd2N8r" },
 				{ title: "Ace Combat 3 (Part 1/5)", videoId: "mqsrsvp90mg?si=SWRh75DpKMfh41an" },
+				{ title: "NDS - Shooting Star Rockman 3: Black Ace (Burai ZZ) [Gemini Noise] (S Rank + No Damage)", videoId: "dvmgo7hlyfY?si=Iu5y4ixxKQus59Wc" },
+				{ title: "Shooting Star Rockman: Pegasus [Using ANOTHER combo card] (In less then a second lol)", videoId: "9XRomr24SwU?si=B9ZN_S8WuQZqEShA" },
+				{ title: "NDS - Shooting Star Rockman 3: Black Ace (Acid Ace BB) [Gemini Noise + BA] (S Rank + No Damage)", videoId: "1eIjGiDAvsY?si=rt0Fj3NOqo8_HPz0" },
+				{ title: "NDS - Shooting Star Rockman 3: Black Ace (Acid Ace BB) [Gemini Noise] (S Rank + No Damage) Twice :)", videoId: "MjP8PkjCFiw?si=CNg98EPMcEq7b25S" },
 				{ title: "Parsec (ePSXe) - ISS Pro Evolution (Cipher's Goals) [1 VS 1]", videoId: "TeSzwpSHjj8?si=lsZ7YtSMljsQU0U-" }
             ]
         },
@@ -83,11 +88,14 @@ document.addEventListener('DOMContentLoaded', () => {
         },
 		others: {
             title: "Others",
-            image: "others/image_11~0.png", 
-            content: `
-                <div class="project-card">
-<h3>Captain Tsubasa: Dream Team (8TH Anniversary)</h3>
-<img src="others/CaptainTsubasaDreamTeam.jpg" class="small-data">
+            image: "others/image_11~0.png",
+            intro: ``,
+            games: [
+                {
+                    id: 'CaptainTsubasaDreamTeam',
+                    title: 'Captain Tsubasa: Dream Team (8TH Anniversary)',
+                    image: 'others/CaptainTsubasaDreamTeam.jpg',
+                    description: '<div class="project-card">
 
 <p>I played this game for eight years after it was released. I played actively for the first three years, then stopped because of the pay-to-win mechanics. Later, I came back just to have some fun.</p>
 </div>
@@ -131,14 +139,23 @@ document.addEventListener('DOMContentLoaded', () => {
 <h3>Radunga (Dream Collection) Version</h3>
 <img src="others/6thDraw.jpg" class="big-data">
 
-<p>I got Radunga (Dream Collection version) from the Valentine’s Dream Transfer on my first draw, so I stopped because I didn’t have enough Dream Balls to keep going.</p>
+<p>I got Radunga (Dream Collection version) from the Valentine’s Dream Transfer on my first draw, and then I continued to collect Dreamballs from the events so I could draw more to get Shun Nitta.</p>
+</div>
+
+<div class="project-card">
+<h3>Shun Nitta (Dream Festival) Version</h3>
+<img src="others/7thDraw1.jpg" class="big-data">
+<img src="others/7thDraw2.jpg" class="big-data">
+<img src="others/8thDraw.jpg" class="big-data">
+
+<p>So I finally got Shun Nitta (Dream Festival version) from the Valentine’s Dream Transfer on my 14th and 15th draws, so I decided to stop pulling and start saving Dreamballs from upcoming events to have a better chance of getting the player I want.</p>
 </div>
 
 <div class="project-card">
 <h3>Main Team</h3>
 <img src="others/Formation1-1.jpg" class="small-data">
 
-<p>This is my main team. The formation I'm using is: 4-2-3-1 (S) Gold Formation. I mainly use Japanese players, with two Brazilian players. I use three team skills to boost players’ stats by 92%. For bonds, I have 81.5% stat increase and 8% shield. I don’t have higher bond stats or meta players because I didn’t play the game a lot. If you play more, you can do more transfer draws, and with good luck you can build a much better team than your old one. I’m using Roberto Hongo (old Dream Festival version) because the company buffed him, and he’s playable right now.</p>
+<p>This is my main team. The formation I'm using is: 4-2-3-1 (S) Gold Formation. I mainly use Japanese players, with two Brazilian players. I use three team skills to boost players’ stats by 92%. For bonds, I have 82% stat increase and 8% shield. I don’t have higher bond stats or meta players because I didn’t play the game a lot. If you play more, you can do more transfer draws, and with good luck you can build a much better team than your old one. I’m using Roberto Hongo (old Dream Festival version) because the company buffed him, and he’s playable right now.</p>
 </div>
 
 <div class="project-card">
@@ -152,7 +169,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <h3>Second Team</h3>
 <img src="others/Formation2.jpg" class="small-data">
 
-<p>This is my second team. I’m using the same formation as my main team. I mainly use South American players, with three Japanese players. I use three team skills that boost stats by 86%. For bonds, I have an 81.5% stat increase and a 10.5% shield.</p>
+<p>This is my second team. I’m using the same formation as my main team. I mainly use South American players, with three Japanese players. I use three team skills that boost stats by 90%. For bonds, I have an 82% stat increase and a 12.5% shield.</p>
 </div>
 
 <div class="project-card">
@@ -164,7 +181,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 <div class="project-card">
 <h3>Radunga</h3>
-<img src="others/Radunga.jpg" class="big-data">
+<img src="others/Radunga1.jpg" class="big-data">
 
 <p>My favorite Defender of all time.</p>
 </div>
@@ -191,13 +208,29 @@ document.addEventListener('DOMContentLoaded', () => {
 </div>
 
 <div class="project-card">
+<h3>Shun Nitta</h3>
+<img src="others/Nitta1.jpg" class="big-data">
+
+<p>My second favorite Striker of all time.</p>
+</div>
+
+<div class="project-card">
 <h3>Roberto Hongo</h3>
 <img src="others/RobertoHongo1.jpg" class="big-data">
 <img src="others/RobertoHongo2.jpg" class="big-data">
 
 <p>My favorite Legendary Player of all time.</p>
 </div>
-            `
+'
+                },
+                
+                {
+                    id: 'coming_soon',
+                    title: 'Coming soon',
+                    image: 'others/image_11~0.png',
+					description: ''
+                }
+            ]
         }
     };
 
@@ -206,9 +239,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelectorAll('.nav-link');
     const clockElement = document.getElementById('clock');
     const dateDayElement = document.getElementById('date-day');
-    // --- NEW: Selector for the back to top button
     const backToTopBtn = document.getElementById('back-to-top-btn');
-	 // --- NEW: Selector for the scroll to bottom button ---
     const scrollToBottomBtn = document.getElementById('scroll-to-bottom-btn');
 
 	 // --- FUNCTIONS ---
@@ -221,14 +252,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const videoDisplay = document.getElementById('video-display-area');
         if (!videoDisplay || !videoData.videoList || videoData.videoList.length === 0) return;
 
-        // Create navigation buttons
         const navButtonsHTML = videoData.videoList.map((video, index) =>
             `<button class="video-nav-btn ${index === 0 ? 'active' : ''}" data-video-id="${video.videoId}">${video.title}</button>`
         ).join('');
 
         const firstVideoId = videoData.videoList[0].videoId;
 
-        // Create the full player HTML
         const playerHTML = `
             <div class="video-nav-container">
                 ${navButtonsHTML}
@@ -240,7 +269,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         videoDisplay.innerHTML = playerHTML;
 
-        // Add event listeners to the new buttons
         const videoNavButtons = videoDisplay.querySelectorAll('.video-nav-btn');
         videoNavButtons.forEach(button => {
             button.addEventListener('click', () => {
@@ -248,8 +276,54 @@ document.addEventListener('DOMContentLoaded', () => {
                 const playerFrame = document.getElementById('youtube-player');
                 playerFrame.src = `https://www.youtube.com/embed/${videoId}`;
 
-                // Update active state
                 videoNavButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+            });
+        });
+    }
+
+    /**
+     * Builds and sets up the interactive content for the 'Others' page.
+     * @param {object} othersData - The 'others' data object from pageData.
+     */
+    function setupOthersPage(othersData) {
+        const displayArea = document.getElementById('others-display-area');
+        if (!displayArea || !othersData.games || othersData.games.length === 0) return;
+
+        const navButtonsHTML = othersData.games.map((game, index) =>
+            `<button class="others-nav-btn ${index === 0 ? 'active' : ''}" data-game-id="${game.id}">${game.title}</button>`
+        ).join('');
+
+        const firstGame = othersData.games[0];
+
+        const contentHTML = `
+            <div class="others-nav-container">
+                ${navButtonsHTML}
+            </div>
+            <div class="others-content-display">
+                <div class="others-content-image">
+                    <img id="others-game-image" src="${firstGame.image}" alt="${firstGame.title}">
+                </div>
+                <div id="others-game-description" class="others-content-text">
+                    ${firstGame.description}
+                </div>
+            </div>
+        `;
+
+        displayArea.innerHTML = contentHTML;
+
+        const navButtons = displayArea.querySelectorAll('.others-nav-btn');
+        navButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const gameId = button.getAttribute('data-game-id');
+                const gameData = othersData.games.find(g => g.id === gameId);
+                if (!gameData) return;
+
+                document.getElementById('others-game-image').src = gameData.image;
+                document.getElementById('others-game-image').alt = gameData.title;
+                document.getElementById('others-game-description').innerHTML = gameData.description;
+
+                navButtons.forEach(btn => btn.classList.remove('active'));
                 button.classList.add('active');
             });
         });
@@ -269,6 +343,8 @@ document.addEventListener('DOMContentLoaded', () => {
             let contentHTML;
             if (pageKey === 'videos') {
                 contentHTML = `${data.intro}<div id="video-display-area"></div>`;
+            } else if (pageKey === 'others') {
+                contentHTML = `${data.intro}<div id="others-display-area"></div>`;
             } else {
                 contentHTML = data.content;
             }
@@ -288,6 +364,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (pageKey === 'videos') {
                 setupVideoPlayer(data);
+            } else if (pageKey === 'others') {
+                setupOthersPage(data);
             }
 
             contentArea.classList.remove('fade-out');
@@ -309,7 +387,6 @@ document.addEventListener('DOMContentLoaded', () => {
         dateDayElement.textContent = dateDayString;
     }
 
-     // --- NEW: Combined Scroll Button Logic ---
     /**
      * Shows or hides the scroll buttons based on the user's scroll position.
      */
@@ -318,15 +395,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const scrollHeight = document.documentElement.scrollHeight;
         const clientHeight = document.documentElement.clientHeight;
 
-        // Show "Back to Top" button if user has scrolled down
         if (scrollTop > 200) {
             backToTopBtn.classList.add('show');
         } else {
             backToTopBtn.classList.remove('show');
         }
 
-        // Show "Scroll to Bottom" button if user is not at the bottom
-        // (with a 50px buffer to prevent flickering)
         if (scrollTop + clientHeight < scrollHeight - 50) {
             scrollToBottomBtn.classList.add('show');
         } else {
@@ -342,7 +416,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /**
-     * NEW: Smoothly scrolls the window to the bottom.
+     * Smoothly scrolls the window to the bottom.
      */
     function scrollToBottom() {
         window.scrollTo({ top: document.documentElement.scrollHeight, behavior: 'smooth' });
@@ -396,7 +470,6 @@ document.addEventListener('DOMContentLoaded', () => {
     function getBotResponse(userMessage) {
         const lowerCaseMessage = userMessage.toLowerCase();
         let botMessage = "I'm not sure how to respond. Try asking about 'Cipher', 'websites', or 'videos'.";
-        // Simple keyword matching for responses
         if (lowerCaseMessage.includes('hello') || lowerCaseMessage.includes('hi')) botMessage = "Hello! I'm CipherBot. How can I help you today?";
         if (lowerCaseMessage.includes('cipher')) botMessage = "Cipher is a web developer and digital archivist, passionate about creating new web experiences and preserving classic video games.";
         if (lowerCaseMessage.includes('website') || lowerCaseMessage.includes('project')) botMessage = "Cipher has worked on several projects, including websites for Mega Man Star Force and Ace Combat Zero. You can navigate to the 'Websites' page to see them all.";
@@ -447,7 +520,6 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // --- EVENT LISTENERS & INITIALIZATION ---
 
-    // Set up navigation link clicks
     navLinks.forEach(link => {
         link.addEventListener('click', (event) => {
             event.preventDefault();
@@ -458,14 +530,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Event listener for dynamically added Gemini button
     contentArea.addEventListener('click', (event) => {
         if (event.target.id === 'gemini-submit-btn') {
             handleGeminiPrompt();
         }
     });
 
-    // --- NEW: Add event listeners for BOTH scroll buttons ---
     window.addEventListener('scroll', handleScrollButtons);
     backToTopBtn.addEventListener('click', scrollToTop);
     scrollToBottomBtn.addEventListener('click', scrollToBottom);
