@@ -318,8 +318,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 const gameData = othersData.games.find(g => g.id === gameId);
                 if (!gameData) return;
 
-                document.getElementById('others-game-image').src = gameData.image;
-                document.getElementById('others-game-image').alt = gameData.title;
                 document.getElementById('others-game-description').innerHTML = gameData.description;
 
                 navButtons.forEach(btn => btn.classList.remove('active'));
