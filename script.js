@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     id: 'CaptainTsubasaDreamTeam',
                     title: 'Captain Tsubasa: Dream Team (8TH Anniversary)',
                     image: 'others/CaptainTsubasaDreamTeam.jpg',
-                    description: '
+                    description: `
 						<div class="project-card">
 <p>I played this game for eight years after it was released. I played actively for the first three years, then stopped because of the pay-to-win mechanics. Later, I came back just to have some fun.</p>
 </div>
@@ -221,14 +221,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
 <p>My favorite Legendary Player of all time.</p>
 </div>
-'
+`
                 },
                 
                 {
                     id: 'coming_soon',
                     title: 'Coming soon',
                     image: 'others/image_11~0.png',
-					description: ''
+					description: ``
                 }
             ]
         }
