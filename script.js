@@ -63,14 +63,26 @@ document.addEventListener('DOMContentLoaded', () => {
             image: "BM12042.webp",
             intro: `<p>A collection of classic and retro game clips dedicated to preserving gaming history.</p>`,
             videoList: [
-                { title: "Air Combat (Longplay)", videoId: "_lPGVdE__tc?si=vfKSK361wA9joT4T" },
-                { title: "Ace Combat 2 (Longplay)", videoId: "88CGhXFs5UA?si=iYLLaIPWT3wXjSsr" },
-                { title: "Sidewinder 2 (Longplay)", videoId: "bFZ-fx2ivsc?si=DCttmFGP7PLd2N8r" },
-				{ title: "Ace Combat 3 (Part 1/5)", videoId: "mqsrsvp90mg?si=SWRh75DpKMfh41an" },
-				{ title: "NDS - Shooting Star Rockman 3: Black Ace (Burai ZZ) [Gemini Noise] (S Rank + No Damage)", videoId: "dvmgo7hlyfY?si=Iu5y4ixxKQus59Wc" },
+                { title: "PS1 Emulator (DuckStation) - Air Combat [Hard] (Longplay)", videoId: "_lPGVdE__tc?si=vfKSK361wA9joT4T" },
+                { title: "PS1 Emulator (DuckStation) - Ace Combat 2 [Hard] (Longplay)", videoId: "88CGhXFs5UA?si=iYLLaIPWT3wXjSsr" },
+                { title: "PS1 Emulator (DuckStation) - Sidewinder 2 [Hard] (Longplay)", videoId: "bFZ-fx2ivsc?si=DCttmFGP7PLd2N8r" },
+				{ title: "PS1 Emulator (DuckStation) - Ace Combat 3: Electrosphere [Hard] (Part 1/5)", videoId: "mqsrsvp90mg?si=SWRh75DpKMfh41an" },
+				{ title: "PS1 Emulator (DuckStation) - Ace Combat 3: Electrosphere [Hard] (Part 2/5)", videoId: "_H7OtXuUj6U?si=MWccg6A1vkk70HjW" },
+				{ title: "PS1 Emulator (DuckStation) - Ace Combat 3: Electrosphere [Hard] (Part 3/5)", videoId: "_QLarGejb5s?si=msEFtnx0yDOd_BjH" },
+				{ title: "PS1 Emulator (DuckStation) - Ace Combat 3: Electrosphere [Hard] (Part 4/5)", videoId: "wHG7TqwgKcI?si=o-zFGA8SQLUST8sX" },
+				{ title: "PS1 Emulator (DuckStation) - Ace Combat 3: Electrosphere [Hard] (Part 5/5)", videoId: "GKO8ud8ChXg?si=nXyPUpa3wUdObsh3" },
 				{ title: "Shooting Star Rockman: Pegasus [Using ANOTHER combo card] (In less then a second lol)", videoId: "9XRomr24SwU?si=B9ZN_S8WuQZqEShA" },
+				{ title: "NDS - Shooting Star Rockman 3: Black Ace (Burai ZZ) [Gemini Noise] (S Rank + No Damage)", videoId: "dvmgo7hlyfY?si=Iu5y4ixxKQus59Wc" },
 				{ title: "NDS - Shooting Star Rockman 3: Black Ace (Acid Ace BB) [Gemini Noise + BA] (S Rank + No Damage)", videoId: "1eIjGiDAvsY?si=rt0Fj3NOqo8_HPz0" },
 				{ title: "NDS - Shooting Star Rockman 3: Black Ace (Acid Ace BB) [Gemini Noise] (S Rank + No Damage) Twice :)", videoId: "MjP8PkjCFiw?si=CNg98EPMcEq7b25S" },
+				{ title: "GBA - Mega Man Battle Network (MagicMan + LifeVirus) [Normal Armor] (Hero Swords Folder)", videoId: "LRQy7Ps5iD4?si=_CLYAgXIW5hH0aS5" },
+				{ title: "GBA - Mega Man Battle Network (Bass) [Normal Armor] (Non Hero Swords Folder)", videoId: "NPsb0qZQ9c0?si=cWEf9CvjmVOhDXOM" },
+				{ title: "GBA - Mega Man Battle Network 2 (Bass + Gospel) [Style: WoodCustom V3] (LS + GS Folder)", videoId: "FMyEhHz5kjE?si=GcE0siL3oZUdoZr-" },
+				{ title: "GBA - Mega Man Battle Network 2 (Bass Deluxe) [Style: WoodCustom V3] (Gaia Sword Folder)", videoId: "7Z5_1ggy1JI?si=Ml0OCvCnOoHEveFU" },
+				{ title: "GBA - Mega Man Battle Network 4: Blue Moon (Only 10 Ω bosses) [Number Soul] (PA: Life Sword Folder)", videoId: "07dit9fjez8?si=-tp9QDVuqbW8_K05" },
+				{ title: "Mega Man Battle Network 4: Blue Moon (ProtoMan Ω) (PA: Life Sword Folder without Giga Chip)", videoId: "zcH0Kp_8OUE?si=pMGcNlSXomtU0l-A" },
+				{ title: "GBA - Mega Man Battle Network 4: Blue Moon (Bass Ω) [No DS] (Super Vulcan Folder)", videoId: "YcO0x_q_Yns?si=vG23kFkNnqOY_BBi" },
+				{ title: "GBA - Mega Man Battle Network 4: Blue Moon (Duo Ω) [No DS] (LS + SV Folder)", videoId: "xQnszvSIZHs?si=-6gCFP5F2JXcWq7R" },
 				{ title: "Parsec (ePSXe) - ISS Pro Evolution (Cipher's Goals) [1 VS 1]", videoId: "TeSzwpSHjj8?si=lsZ7YtSMljsQU0U-" }
             ]
         },
@@ -260,11 +272,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const firstVideoId = videoData.videoList[0].videoId;
 
         const playerHTML = `
+			<div class="video-container">
+                <iframe id="youtube-player" src="https://www.youtube.com/embed/${firstVideoId}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
             <div class="video-nav-container">
                 ${navButtonsHTML}
-            </div>
-            <div class="video-container">
-                <iframe id="youtube-player" src="https://www.youtube.com/embed/${firstVideoId}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         `;
 
