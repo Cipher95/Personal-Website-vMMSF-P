@@ -245,7 +245,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     title: 'Traffic lights - Arduino',
                     image: 'others/image_11~0.png',
 					description: `
-								<embed width="100%" height="750px" src="https://wokwi.com/projects/448434280155456513">
+					<div class="project-card">
+<embed width="100%" height="750px" src="https://wokwi.com/projects/448434280155456513">
+<p>For the Arduino, I used a website called Wokwi. I found a Traffic Lights project there, used it as a base, and then made some changes to improve how the traffic lights work.</p>
+</div>
 					`
                 }
             ]
