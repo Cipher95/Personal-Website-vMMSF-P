@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
 				<div class="project-card">
                     <h3>MMSF3 Ranking Tournament 2026</h3>
-                    <p>The event is still going.</p>
+                    <p>Final result.</p>
                     <a href="https://cipher95.github.io/MMSF3-Ranking-Tournament-2026/" target="_blank">View Project</a>
                 </div>
             `
@@ -241,10 +241,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 },
                 
                 {
-                    id: 'coming_soon',
-                    title: 'Coming soon',
+                    id: 'traffic_lights',
+                    title: 'Traffic lights - Arduino',
                     image: 'others/image_11~0.png',
-					description: ``
+					description: `
+								<embed width="100%" height="750px" src="https://wokwi.com/projects/448434280155456513">
+					`
                 }
             ]
         }
