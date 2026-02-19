@@ -242,12 +242,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 {
                     id: 'traffic_lights',
-                    title: 'Traffic lights - Arduino',
+                    title: 'Traffic Lights - Arduino',
                     image: 'others/image_11~0.png',
 					description: `
 					<div class="project-card">
 <embed width="100%" height="750px" src="https://wokwi.com/projects/448434280155456513">
 <p>For the Arduino, I used a website called Wokwi. I found a Traffic Lights project there, used it as a base, and then made some changes to improve how the traffic lights work.</p>
+<p>You can zoom in and out of the traffic lights, switch between light and dark mode, and activate the traffic lights by pressing the Start button.</p>
 </div>
 					`
                 }
