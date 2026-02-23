@@ -258,7 +258,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     image: 'others/image_11~0.png',
 					description: `
 					<div class="project-card">
-<embed width="100%" height="750px" src="https://www.programiz.com/online-compiler/42kUCYW9CfnYN">
+<embed width="100%" height="750px" src="https://www.programiz.com/online-compiler/9NToyvhC5B4eF">
 <p>In Java, I developed a cashier system for Burger King independently.</p>
 <p>To start the project, press the Run button.</p>
 </div>
