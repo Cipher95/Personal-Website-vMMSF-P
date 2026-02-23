@@ -251,6 +251,30 @@ document.addEventListener('DOMContentLoaded', () => {
 <p>You can zoom in and out of the traffic lights, switch between light and dark mode, and activate the traffic lights by pressing the Start button.</p>
 </div>
 					`
+                },
+				{
+                    id: 'Cashier_for_the_Burger_King1',
+                    title: 'Cashier for the Burger King - Java (Part: 1)',
+                    image: 'others/image_11~0.png',
+					description: `
+					<div class="project-card">
+<embed width="100%" height="750px" src="https://www.programiz.com/online-compiler/42kUCYW9CfnYN">
+<p>In Java, I developed a cashier system for Burger King independently.</p>
+<p>To start the project, press the Run button.</p>
+</div>
+					`
+                },
+				{
+                    id: 'Cashier_for_the_Burger_King2',
+                    title: 'Cashier for the Burger King - Java (Part: 2)',
+                    image: 'others/image_11~0.png',
+					description: `
+					<div class="project-card">
+<embed width="100%" height="750px" src="https://www.programiz.com/online-compiler/0dIgtzEbaheZY">
+<p>In the second part, the AI coded this better than I did, but it gives the same result as the first part.</p>
+<p>To start the project, press the Run button.</p>
+</div>
+					`
                 }
             ]
         }
