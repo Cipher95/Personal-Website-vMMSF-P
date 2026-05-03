@@ -275,6 +275,35 @@ document.addEventListener('DOMContentLoaded', () => {
 <p>To start the project, press the Run button.</p>
 </div>
 					`
+                },
+				 {
+                    id: 'calculator',
+                    title: 'Calculator',
+                    image: 'BM12042.webp',
+                    content: `
+                        <div id="calculator">
+                            <div id="calculator-display">0</div>
+                            <div id="calculator-grid">
+                                <button class="calc-btn wide special" data-action="clear">AC</button>
+                                <button class="calc-btn operator" data-key="/">÷</button>
+                                <button class="calc-btn" data-key="7">7</button>
+                                <button class="calc-btn" data-key="8">8</button>
+                                <button class="calc-btn" data-key="9">9</button>
+                                <button class="calc-btn operator" data-key="*">×</button>
+                                <button class="calc-btn" data-key="4">4</button>
+                                <button class="calc-btn" data-key="5">5</button>
+                                <button class="calc-btn" data-key="6">6</button>
+                                <button class="calc-btn operator" data-key="-">−</button>
+                                <button class="calc-btn" data-key="1">1</button>
+                                <button class="calc-btn" data-key="2">2</button>
+                                <button class="calc-btn" data-key="3">3</button>
+                                <button class="calc-btn operator" data-key="+">+</button>
+                                <button class="calc-btn wide" data-key="0">0</button>
+                                <button class="calc-btn" data-key=".">.</button>
+                                <button class="calc-btn operator" data-action="calculate">=</button>
+                            </div>
+                        </div>
+                    `
                 }
             ]
         }
@@ -314,6 +343,11 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
 
         videoDisplay.innerHTML = playerHTML;
+
+		 if (firstGame.id === 'calculator') {
+            initializeCalculator();
+        }
+
 
         const videoNavButtons = videoDisplay.querySelectorAll('.video-nav-btn');
         videoNavButtons.forEach(button => {
@@ -367,6 +401,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 navButtons.forEach(btn => btn.classList.remove('active'));
                 button.classList.add('active');
+
+				 // If the selected item is the calculator, initialize its script
+                if (gameId === 'calculator') {
+                    initializeCalculator();
+                }
             });
         });
     }
@@ -375,6 +414,98 @@ document.addEventListener('DOMContentLoaded', () => {
      * Switches the content displayed in the main area.
      * @param {string} pageKey - The key corresponding to the data in pageData.
      */
+	 function initializeCalculator() {
+        const calculator = document.getElementById('calculator');
+        if (!calculator) return;
+
+        const display = document.getElementById('calculator-display');
+        const grid = document.getElementById('calculator-grid');
+
+        let displayValue = '0';
+        let firstOperand = null;
+        let operator = null;
+        let waitingForSecondOperand = false;
+
+        function updateDisplay() {
+            display.textContent = displayValue;
+        }
+        updateDisplay();
+
+        grid.addEventListener('click', (event) => {
+            const { target } = event;
+            if (!target.matches('button')) return;
+
+            if (target.dataset.action === 'calculate') {
+                handleOperator('=');
+                return;
+            }
+            if (target.dataset.action === 'clear') {
+                resetCalculator();
+                updateDisplay();
+                return;
+            }
+            if (target.classList.contains('operator')) {
+                handleOperator(target.dataset.key);
+                return;
+            }
+            if (target.dataset.key === '.') {
+                inputDecimal(target.dataset.key);
+                updateDisplay();
+                return;
+            }
+            inputDigit(target.dataset.key);
+            updateDisplay();
+        });
+
+        function inputDigit(digit) {
+            if (waitingForSecondOperand) {
+                displayValue = digit;
+                waitingForSecondOperand = false;
+            } else {
+                displayValue = displayValue === '0' ? digit : displayValue + digit;
+            }
+        }
+
+        function inputDecimal(dot) {
+            if (!displayValue.includes(dot)) {
+                displayValue += dot;
+            }
+        }
+
+        function handleOperator(nextOperator) {
+            const inputValue = parseFloat(displayValue);
+            if (operator && waitingForSecondOperand) {
+                operator = nextOperator;
+                return;
+            }
+            if (firstOperand === null) {
+                firstOperand = inputValue;
+            } else if (operator) {
+                const result = calculate(firstOperand, inputValue, operator);
+                displayValue = `${parseFloat(result.toFixed(7))}`;
+                firstOperand = result;
+            }
+            waitingForSecondOperand = true;
+            operator = nextOperator;
+            updateDisplay();
+        }
+
+        function calculate(first, second, op) {
+            if (op === '+') return first + second;
+            if (op === '-') return first - second;
+            if (op === '*') return first * second;
+            if (op === '/') return first / second;
+            return second;
+        }
+
+        function resetCalculator() {
+            displayValue = '0';
+            firstOperand = null;
+            operator = null;
+            waitingForSecondOperand = false;
+        }
+    }
+
     function switchContent(pageKey) {
         const data = pageData[pageKey];
         if (!data) return;
