@@ -325,7 +325,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     title: 'Live Stream (Mega Man Twitch)',
                     image: '',
                     description: `
-                        <iframe src="https://player.twitch.tv/?channel=skym1ke&parent=www.cipher95.github.io" frameborder="0" allowfullscreen="true" scrolling="no" height="378" width="100%"></iframe>
+                        <iframe src="https://player.twitch.tv/?channel=skym1ke&parent=cipher95.github.io" frameborder="0" allowfullscreen="true" scrolling="no" height="378" width="100%"></iframe>
                     `
                 }
             ]
