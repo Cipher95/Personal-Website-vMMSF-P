@@ -309,21 +309,21 @@ document.addEventListener('DOMContentLoaded', () => {
 				{
                     id: 'World_Wide_Map',
                     title: 'World Wide Map',
-                    image: '',
+                    image: 'World-Map-Board.jpg',
                     description: `
                         <iframe src="https://www.google.com/maps/d/embed?mid=1hjs3mIoZBblBP_CvxiP4w38STiY&hl=en_US&ehbc=2E312F" width="100%" height="720"></iframe>
                     `
                 },{
                     id: 'Live_Stream_1',
                     title: 'Live Stream (shrood)',
-                    image: '',
+                    image: 'Twitch-1440.webp',
                     description: `
                         <iframe src="https://player.twitch.tv/?channel=shrood&parent=cipher95.github.io" frameborder="0" allowfullscreen="true" scrolling="no" height="378" width="100%"></iframe>
                     `
                 },{
                     id: 'Live_Stream_2',
                     title: 'Live Stream (timthetatmanvods)',
-                    image: '',
+                    image: 'Twitch-1440.webp',
                     description: `
                         <iframe src="https://player.twitch.tv/?channel=timthetatmanvods&parent=cipher95.github.io" frameborder="0" allowfullscreen="true" scrolling="no" height="378" width="100%"></iframe>
                     `
