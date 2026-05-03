@@ -315,17 +315,17 @@ document.addEventListener('DOMContentLoaded', () => {
                     `
                 },{
                     id: 'Live_Stream_1',
-                    title: 'Live Stream (Mega Man Games)',
+                    title: 'Live Stream (shrood)',
                     image: '',
                     description: `
-                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/NRdwFzYWBbM?si=OVLoPhyxVu3hgZR8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <iframe src="https://player.twitch.tv/?channel=shrood&parent=cipher95.github.io" frameborder="0" allowfullscreen="true" scrolling="no" height="378" width="100%"></iframe>
                     `
                 },{
                     id: 'Live_Stream_2',
-                    title: 'Live Stream (Mega Man Twitch)',
+                    title: 'Live Stream (timthetatmanvods)',
                     image: '',
                     description: `
-                        <iframe src="https://player.twitch.tv/?channel=skym1ke&parent=cipher95.github.io" frameborder="0" allowfullscreen="true" scrolling="no" height="378" width="100%"></iframe>
+                        <iframe src="https://player.twitch.tv/?channel=timthetatmanvods&parent=cipher95.github.io" frameborder="0" allowfullscreen="true" scrolling="no" height="378" width="100%"></iframe>
                     `
                 }
             ]
