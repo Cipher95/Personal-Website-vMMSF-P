@@ -311,7 +311,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     title: 'World Wide Map',
                     image: '',
                     description: `
-                        <iframe src="https://www.google.com/maps/d/embed?mid=1hjs3mIozBb1BP_CvxjP4w38STiV8hl&hl=en_US&ehbc=2E312F" width="960" height="720"></iframe>
+                        <iframe src="https://www.google.com/maps/d/embed?mid=1hjs3mIoZBblBP_CvxiP4w38STiY&hl=en_US&ehbc=2E312F" width="960" height="720"></iframe>
                     `
                 },{
                     id: 'Live_Stream_1',
