@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     id: 'CaptainTsubasaDreamTeam',
                     title: 'Captain Tsubasa: Dream Team (8TH Anniversary)',
                     image: 'others/CaptainTsubasaDreamTeam.jpg',
-                    description: `
+                    content: `
 						<div class="project-card">
 						<img src="others/CaptainTsubasaDreamTeam.jpg" class="big-data">
 <p>I played Captain Tsubasa: Dream Team for eight years after it was released. I played actively for the first three years, then stopped because of the pay-to-win mechanics. Later, I came back just to have some fun.</p>
@@ -244,7 +244,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     id: 'traffic_lights',
                     title: 'Traffic Lights - Arduino',
                     image: 'others/image_11~0.png',
-					description: `
+					content: `
 					<div class="project-card">
 <embed width="100%" height="750px" src="https://wokwi.com/projects/448434280155456513">
 <p>For the Arduino, I used a website called Wokwi. I found a Traffic Lights project there, used it as a base, and then made some changes to improve how the traffic lights work.</p>
@@ -256,7 +256,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     id: 'Cashier_for_the_Burger_King1',
                     title: 'Cashier for the Burger King - Java (Part: 1)',
                     image: 'others/image_11~0.png',
-					description: `
+					content: `
 					<div class="project-card">
 <embed width="100%" height="750px" src="https://www.programiz.com/online-compiler/9NToyvhC5B4eF">
 <p>In Java, I developed a cashier system for Burger King independently.</p>
@@ -268,7 +268,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     id: 'Cashier_for_the_Burger_King2',
                     title: 'Cashier for the Burger King - Java (Part: 2)',
                     image: 'others/image_11~0.png',
-					description: `
+					content: `
 					<div class="project-card">
 <embed width="100%" height="750px" src="https://www.programiz.com/online-compiler/0dIgtzEbaheZY">
 <p>In the second part, the AI coded this better than I did, but it gives the same result as the first part.</p>
@@ -278,7 +278,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 },
 				 {
                     id: 'calculator',
-                    title: 'Calculator',
+                    title: 'Basic Calculator',
                     image: 'BM12042.webp',
                     content: `
                         <div id="calculator">
