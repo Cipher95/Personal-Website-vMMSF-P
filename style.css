@@ -318,6 +318,65 @@ img.big-data {
     padding-left: 10px;
 }
 
+/* --- NEW: Calculator Styles --- */
+#calculator {
+    width: 100%;
+    max-width: 280px; /* Limit max width for better appearance */
+    margin: 10px auto; /* Center the calculator */
+    padding: 10px;
+    background-color: #000;
+    border: 2px solid var(--mmsf-light-blue);
+}
+
+#calculator-display {
+    background-color: #1a2a1a; /* Retro LCD green */
+    color: #e0f0e0;
+    font-family: var(--font-title);
+    font-size: 24px;
+    text-align: right;
+    padding: 15px 10px;
+    margin-bottom: 10px;
+    border: 2px solid var(--mmsf-light-blue);
+    overflow-x: auto; /* Allow scrolling for long numbers */
+}
+
+#calculator-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+}
+
+.calc-btn {
+    font-family: var(--font-title);
+    font-size: 16px;
+    color: var(--mmsf-text-white);
+    background-color: var(--mmsf-dark-blue);
+    border: 2px solid var(--mmsf-text-black);
+    border-top-color: var(--mmsf-light-blue);
+    border-left-color: var(--mmsf-light-blue);
+    padding: 15px 0;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.calc-btn:hover {
+    background-color: var(--mmsf-light-blue);
+    color: var(--mmsf-text-black);
+}
+
+.calc-btn.wide {
+    grid-column: span 3;
+}
+
+.calc-btn.operator {
+    background-color: var(--mmsf-gold);
+    color: var(--mmsf-text-black);
+}
+
+.calc-btn.special {
+    background-color: #a80022; /* A red-like color */
+}
+
 
 /* --- SCROLL BUTTONS --- */
 #back-to-top-btn, #scroll-to-bottom-btn {
