@@ -336,47 +336,48 @@ document.addEventListener('DOMContentLoaded', () => {
 	 // --- FUNCTIONS ---
 
     /**
-     * Builds and sets up the interactive video player.
-     * @param {object} videoData - The video data object from pageData.
-     */
-    function setupVideoPlayer(videoData) {
-        const videoDisplay = document.getElementById('video-display-area');
-        if (!videoDisplay || !videoData.videoList || videoData.videoList.length === 0) return;
+ * *** FIX: Restored the full, correct setupVideoPlayer function. ***
+ * Builds and sets up the interactive video player.
+ * @param {object} videoData - The video data object from pageData.
+ */
+function setupVideoPlayer(videoData) {
+    // 1. Get the correct container for the video player.
+    const videoDisplay = document.getElementById('video-display-area');
+    if (!videoDisplay || !videoData.videoList || videoData.videoList.length === 0) return;
 
-        const navButtonsHTML = videoData.videoList.map((video, index) =>
-            `<button class="video-nav-btn ${index === 0 ? 'active' : ''}" data-video-id="${video.videoId}">${video.title}</button>`
-        ).join('');
+    // 2. Create the navigation buttons using the video titles from videoData.
+    const navButtonsHTML = videoData.videoList.map((video, index) =>
+        `<button class="video-nav-btn ${index === 0 ? 'active' : ''}" data-video-id="${video.videoId}">${video.title}</button>`
+    ).join('');
 
-        const firstVideoId = videoData.videoList[0].videoId;
+    // 3. Get the ID of the *first video* from the videoList, NOT 'firstGame'.
+    const firstVideoId = videoData.videoList[0].videoId;
 
-        const playerHTML = `
-			<div class="video-container">
-                <iframe id="youtube-player" src="https://www.youtube.com/embed/${firstVideoId}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-            <div class="video-nav-container">
-                ${navButtonsHTML}
-            </div>
-        `;
+    // 4. Build the correct HTML for the video player using firstVideoId.
+    const playerHTML = `
+		<div class="video-container">
+            <iframe id="youtube-player" src="https://www.youtube.com/embed/${firstVideoId}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="video-nav-container">
+            ${navButtonsHTML}
+        </div>
+    `;
 
-        videoDisplay.innerHTML = playerHTML;
+    // 5. Inject the HTML and set up the click events for the video buttons.
+    videoDisplay.innerHTML = playerHTML;
 
-		 if (firstGame.id === 'calculator') {
-            initializeCalculator();
-        }
+    const videoNavButtons = videoDisplay.querySelectorAll('.video-nav-btn');
+    videoNavButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const videoId = button.getAttribute('data-video-id');
+            const playerFrame = document.getElementById('youtube-player');
+            playerFrame.src = `https://www.youtube.com/embed/${videoId}`;
 
-
-        const videoNavButtons = videoDisplay.querySelectorAll('.video-nav-btn');
-        videoNavButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const videoId = button.getAttribute('data-video-id');
-                const playerFrame = document.getElementById('youtube-player');
-                playerFrame.src = `https://www.youtube.com/embed/${videoId}`;
-
-                videoNavButtons.forEach(btn => btn.classList.remove('active'));
-                button.classList.add('active');
-            });
+            videoNavButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
         });
-    }
+    });
+}
 
     /**
      * Builds and sets up the interactive content for the 'Others' page.
