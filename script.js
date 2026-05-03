@@ -75,6 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
 				{ title: "NDS - Shooting Star Rockman 3: Black Ace (Burai ZZ) [Gemini Noise] (S Rank + No Damage)", videoId: "dvmgo7hlyfY?si=Iu5y4ixxKQus59Wc" },
 				{ title: "NDS - Shooting Star Rockman 3: Black Ace (Acid Ace BB) [Gemini Noise + BA] (S Rank + No Damage)", videoId: "1eIjGiDAvsY?si=rt0Fj3NOqo8_HPz0" },
 				{ title: "NDS - Shooting Star Rockman 3: Black Ace (Acid Ace BB) [Gemini Noise] (S Rank + No Damage) Twice :)", videoId: "MjP8PkjCFiw?si=CNg98EPMcEq7b25S" },
+				{ title: "Shooting Star Rockman 3: Black Ace (Sword Fighter X Combo + Million Kick) [BA]", videoId: "x0f_7fMbgBo?si=RjUR1-ox9VoSXeJS" },
 				{ title: "GBA - Mega Man Battle Network (MagicMan + LifeVirus) [Normal Armor] (Hero Swords Folder)", videoId: "LRQy7Ps5iD4?si=_CLYAgXIW5hH0aS5" },
 				{ title: "GBA - Mega Man Battle Network (Bass) [Normal Armor] (Non Hero Swords Folder)", videoId: "NPsb0qZQ9c0?si=cWEf9CvjmVOhDXOM" },
 				{ title: "GBA - Mega Man Battle Network 2 (Bass + Gospel) [Style: WoodCustom V3] (LS + GS Folder)", videoId: "FMyEhHz5kjE?si=GcE0siL3oZUdoZr-" },
@@ -303,6 +304,21 @@ document.addEventListener('DOMContentLoaded', () => {
 								<button class="calc-btn" data-key=".">.</button>
                             </div>
                         </div>
+                    `
+                },
+				{
+                    id: 'World_Wide_Map',
+                    title: 'World Wide Map',
+                    image: '',
+                    description: `
+                        <iframe src="https://www.google.com/maps/d/embed?mid=1hjs3mIozBb1BP_CvxjP4w38STiV8hl&hl=en_US&ehbc=2E312F" width="960" height="720"></iframe>
+                    `
+                },{
+                    id: 'Live_Stream_1',
+                    title: 'Live Stream (Mega Man Games)',
+                    image: '',
+                    description: `
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/NRdwFzYWBbM?si=OVLoPhyxVu3hgZR8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     `
                 }
             ]
