@@ -350,12 +350,15 @@ document.addEventListener('DOMContentLoaded', () => {
         const videoDisplay = document.getElementById('video-display-area');
         if (!videoDisplay || !videoData.videoList || videoData.videoList.length === 0) return;
 
+        // 1. Create the navigation buttons
         const navButtonsHTML = videoData.videoList.map((video, index) =>
             `<button class="video-nav-btn ${index === 0 ? 'active' : ''}" data-video-id="${video.videoId}">${video.title}</button>`
         ).join('');
 
+        // 2. Get the ID of the first video to load it by default (THIS IS WHERE THE ERROR WAS)
         const firstVideoId = videoData.videoList[0].videoId;
 
+        // 3. Create the iframe and inject it into the page
         const playerHTML = `
 			<div class="video-container">
                 <iframe id="youtube-player" src="https://www.youtube.com/embed/${firstVideoId}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -367,11 +370,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         videoDisplay.innerHTML = playerHTML;
 
-		 if (firstGame.id === 'calculator') {
-            initializeCalculator();
-        }
-
-
+        // 4. Add click events to switch videos
         const videoNavButtons = videoDisplay.querySelectorAll('.video-nav-btn');
         videoNavButtons.forEach(button => {
             button.addEventListener('click', () => {
@@ -379,6 +378,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const playerFrame = document.getElementById('youtube-player');
                 playerFrame.src = `https://www.youtube.com/embed/${videoId}`;
 
+                // Update active button color
                 videoNavButtons.forEach(btn => btn.classList.remove('active'));
                 button.classList.add('active');
             });
