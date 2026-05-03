@@ -279,7 +279,7 @@ document.addEventListener('DOMContentLoaded', () => {
 				 {
                     id: 'calculator',
                     title: 'Basic Calculator',
-                    image: 'BM12042.webp',
+                    image: 'BasicCalculator.png',
                     description: `
                         <div id="calculator">
                             <div id="calculator-display">0</div>
@@ -299,8 +299,8 @@ document.addEventListener('DOMContentLoaded', () => {
                                 <button class="calc-btn" data-key="3">3</button>
                                 <button class="calc-btn operator" data-key="+">+</button>
                                 <button class="calc-btn wide" data-key="0">0</button>
-                                <button class="calc-btn" data-key=".">.</button>
                                 <button class="calc-btn operator" data-action="calculate">=</button>
+								<button class="calc-btn" data-key=".">.</button>
                             </div>
                         </div>
                     `
