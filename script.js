@@ -310,7 +310,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     id: 'timer',
                     title: 'Timer',
                     image: 'UNMMSF3Gemini.webp',
-                    content: `
+                    description: `
                         <div id="timer">
                             <div id="timer-display">00:00:00</div>
                             <div class="timer-inputs">
