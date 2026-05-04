@@ -380,7 +380,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // 1. Create the navigation buttons
         const navButtonsHTML = videoData.videoList.map((video, index) =>
-            `<button class="video-nav-btn ${index === 0 ? 'active' : ''}" data-video-id="${video.videoId}">${video.title}</button>`
+            `<button class="video-nav-btn ${index === 0 ? 'active' : ''}" data-video-id="${video.videoId}">${video.title}</button><br/>`
         ).join('');
 
         // 2. Get the ID of the first video to load it by default (THIS IS WHERE THE ERROR WAS)
