@@ -299,9 +299,9 @@ document.addEventListener('DOMContentLoaded', () => {
                                 <button class="calc-btn" data-key="2">2</button>
                                 <button class="calc-btn" data-key="3">3</button>
                                 <button class="calc-btn operator" data-key="+">+</button>
-                                <button class="calc-btn wide" data-key="0">0</button>
-                                <button class="calc-btn operator" data-action="calculate">=</button>
+                                <button class="calc-btn wide2" data-key="0">0</button>
 								<button class="calc-btn" data-key=".">.</button>
+                                <button class="calc-btn operator" data-action="calculate">=</button>
                             </div>
                         </div>
                     `
