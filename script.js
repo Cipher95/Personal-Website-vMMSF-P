@@ -307,6 +307,26 @@ document.addEventListener('DOMContentLoaded', () => {
                     `
                 },
 				{
+                    id: 'timer',
+                    title: 'Timer',
+                    image: 'UNMMSF3Gemini.webp',
+                    content: `
+                        <div id="timer">
+                            <div id="timer-display">00:00:00</div>
+                            <div class="timer-inputs">
+                                <input type="number" id="hours" placeholder="HH" min="0" max="99">
+                                <input type="number" id="minutes" placeholder="MM" min="0" max="59">
+                                <input type="number" id="seconds" placeholder="SS" min="0" max="59">
+                            </div>
+                            <div class="timer-controls">
+                                <button class="timer-btn" id="start-timer">Start</button>
+                                <button class="timer-btn" id="pause-timer">Pause</button>
+                                <button class="timer-btn" id="reset-timer">Reset</button>
+                            </div>
+                        </div>
+                    `
+                },
+				{
                     id: 'World_Wide_Map',
                     title: 'World Wide Map',
                     image: 'others/World-Map-Board.jpg',
@@ -413,6 +433,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         displayArea.innerHTML = contentHTML;
 
+		if (firstGame.id === 'calculator') initializeCalculator();
+        if (firstGame.id === 'timer') initializeTimer();
+
         const navButtons = displayArea.querySelectorAll('.others-nav-btn');
         navButtons.forEach(button => {
             button.addEventListener('click', () => {
@@ -426,9 +449,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 button.classList.add('active');
 
 				 // If the selected item is the calculator, initialize its script
-                if (gameId === 'calculator') {
-                    initializeCalculator();
-                }
+                if (gameId === 'calculator') initializeCalculator();
+                if (gameId === 'timer') initializeTimer();
             });
         });
     }
@@ -528,6 +550,74 @@ document.addEventListener('DOMContentLoaded', () => {
             waitingForSecondOperand = false;
         }
     }
+
+	 function initializeTimer() {
+        const display = document.getElementById('timer-display');
+        const hoursInput = document.getElementById('hours');
+        const minutesInput = document.getElementById('minutes');
+        const secondsInput = document.getElementById('seconds');
+        const startBtn = document.getElementById('start-timer');
+        const pauseBtn = document.getElementById('pause-timer');
+        const resetBtn = document.getElementById('reset-timer');
+
+        let timerInterval = null;
+        let remainingTime = 0; // in seconds
+        let isPaused = false;
+
+        function updateDisplay() {
+            const h = Math.floor(remainingTime / 3600);
+            const m = Math.floor((remainingTime % 3600) / 60);
+            const s = remainingTime % 60;
+            display.textContent = `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+        }
+
+        function startTimer() {
+            if (timerInterval) return; // Don't start if already running
+
+            if (!isPaused) {
+                const hours = parseInt(hoursInput.value) || 0;
+                const minutes = parseInt(minutesInput.value) || 0;
+                const seconds = parseInt(secondsInput.value) || 0;
+                remainingTime = (hours * 3600) + (minutes * 60) + seconds;
+            }
+
+            if (remainingTime <= 0) return;
+            
+            isPaused = false;
+            timerInterval = setInterval(() => {
+                remainingTime--;
+                updateDisplay();
+                if (remainingTime <= 0) {
+                    clearInterval(timerInterval);
+                    timerInterval = null;
+                }
+            }, 1000);
+        }
+
+        function pauseTimer() {
+            if (timerInterval) {
+                clearInterval(timerInterval);
+                timerInterval = null;
+                isPaused = true;
+            }
+        }
+
+        function resetTimer() {
+            clearInterval(timerInterval);
+            timerInterval = null;
+            isPaused = false;
+            remainingTime = 0;
+            hoursInput.value = '';
+            minutesInput.value = '';
+            secondsInput.value = '';
+            updateDisplay();
+        }
+
+        startBtn.addEventListener('click', startTimer);
+        pauseBtn.addEventListener('click', pauseTimer);
+        resetBtn.addEventListener('click', resetTimer);
+    }
+
 
     function switchContent(pageKey) {
         const data = pageData[pageKey];
