@@ -368,6 +368,10 @@ img.big-data {
     grid-column: span 3;
 }
 
+.calc-btn.wide2 {
+    grid-column: span 2;
+}
+
 .calc-btn.operator {
     background-color: var(--mmsf-gold);
     color: var(--mmsf-text-black);
