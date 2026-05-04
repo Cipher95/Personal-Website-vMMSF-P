@@ -20,41 +20,49 @@ document.addEventListener('DOMContentLoaded', () => {
                     <h3>Mega Man Star Force 3</h3>
                     <p>A comprehensive and interactive fan-made website dedicated to the Nintendo DS classic.</p>
                     <a href="https://cipher95.github.io/Mega-Man-Star-Force-3/" target="_blank">View Project</a>
+					<br/>
                 </div>
                  <div class="project-card">
                     <h3>Mega Man Star Force Legacy Collection</h3>
                     <p>A conceptual promotional site for a hypothetical "Legacy Collection."</p>
                     <a href="https://cipher95.github.io/Mega-Man-Star-Force-Legacy-Collection/" target="_blank">View Project</a>
+					<br/>
                 </div>
                  <div class="project-card">
                     <h3>Ace Combat Zero: The Belkan War</h3>
                     <p>An immersive story-focused website that dives deep into the lore of Ace Combat Zero.</p>
                     <a href="https://cipher95.github.io/Ace-Combat-Zero-The-Belkan-War/" target="_blank">View Project</a>
+					<br/>
                 </div>
                  <div class="project-card">
                     <h3>MechWarrior 2: 31st Century Combat</h3>
                     <p>A retro-themed tribute to the 1995 PC gaming titan with classic MIDI audio.</p>
                     <a href="https://cipher95.github.io/MechWarrior-2-31st-Century-Combat/" target="_blank">View Project</a>
+					<br/>
                 </div>
 				 <div class="project-card">
                     <h3>Cipher | Personal Website</h3>
                     <p>This is my main Personal Website.</p>
                     <a href="https://cipher95.github.io/Personal-Website/" target="_blank">View Project</a>
+					<br/>
                 </div>
 				<div class="project-card">
                     <h3>SF Clan | Star Force</h3>
                     <p>A fellowship of gamers dedicated to mastering the classics.</p>
                     <a href="https://cipher95.github.io/SF-Clan/" target="_blank">View Project</a>
+					<br/>
                 </div>
 				<div class="project-card">
                     <h3>MMSF3 Grand Tournament 2026</h3>
                     <p>This event has been canceled. I created a new URL for the new tournament.</p>
                     <a href="https://cipher95.github.io/MMSF3-Grand-Tournament-2026/" target="_blank">View Project</a>
+					<br/>
                 </div>
 				<div class="project-card">
                     <h3>MMSF3 Ranking Tournament 2026</h3>
                     <p>Final result.</p>
                     <a href="https://cipher95.github.io/MMSF3-Ranking-Tournament-2026/" target="_blank">View Project</a>
+					<br/>
                 </div>
             `
         },
@@ -383,6 +391,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			<div class="video-container">
                 <iframe id="youtube-player" src="https://www.youtube.com/embed/${firstVideoId}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
+			</br>
             <div class="video-nav-container">
                 ${navButtonsHTML}
             </div>
