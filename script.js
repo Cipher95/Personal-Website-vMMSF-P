@@ -20,50 +20,50 @@ document.addEventListener('DOMContentLoaded', () => {
                     <h2>Mega Man Star Force 3</h2>
                     <p>A comprehensive and interactive fan-made website dedicated to the Nintendo DS classic.</p>
                     <a href="https://cipher95.github.io/Mega-Man-Star-Force-3/" target="_blank">View Project</a>
-					<br/>
                 </div>
+				<br/>
                  <div class="project-card">
                     <h2>Mega Man Star Force Legacy Collection</h2>
                     <p>A conceptual promotional site for a hypothetical "Legacy Collection."</p>
                     <a href="https://cipher95.github.io/Mega-Man-Star-Force-Legacy-Collection/" target="_blank">View Project</a>
-					<br/>
                 </div>
+				<br/>
                  <div class="project-card">
                     <h2>Ace Combat Zero: The Belkan War</h2>
                     <p>An immersive story-focused website that dives deep into the lore of Ace Combat Zero.</p>
                     <a href="https://cipher95.github.io/Ace-Combat-Zero-The-Belkan-War/" target="_blank">View Project</a>
-					<br/>
                 </div>
+				<br/>
                  <div class="project-card">
                     <h2>MechWarrior 2: 31st Century Combat</h2>
                     <p>A retro-themed tribute to the 1995 PC gaming titan with classic MIDI audio.</p>
                     <a href="https://cipher95.github.io/MechWarrior-2-31st-Century-Combat/" target="_blank">View Project</a>
-					<br/>
                 </div>
+				<br/>
 				 <div class="project-card">
                     <h2>Cipher | Personal Website</h2>
                     <p>This is my main Personal Website.</p>
                     <a href="https://cipher95.github.io/Personal-Website/" target="_blank">View Project</a>
-					<br/>
                 </div>
+				<br/>
 				<div class="project-card">
                     <h2>SF Clan | Star Force</h2>
                     <p>A fellowship of gamers dedicated to mastering the classics.</p>
                     <a href="https://cipher95.github.io/SF-Clan/" target="_blank">View Project</a>
-					<br/>
                 </div>
+				<br/>
 				<div class="project-card">
                     <h2>MMSF3 Grand Tournament 2026</h2>
                     <p>This event has been canceled. I created a new URL for the new tournament.</p>
                     <a href="https://cipher95.github.io/MMSF3-Grand-Tournament-2026/" target="_blank">View Project</a>
-					<br/>
                 </div>
+				<br/>
 				<div class="project-card">
                     <h2>MMSF3 Ranking Tournament 2026</h2>
                     <p>Final result.</p>
                     <a href="https://cipher95.github.io/MMSF3-Ranking-Tournament-2026/" target="_blank">View Project</a>
-					<br/>
                 </div>
+				<br/>
             `
         },
 		videos: {
