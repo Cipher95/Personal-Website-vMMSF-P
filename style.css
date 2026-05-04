@@ -381,6 +381,75 @@ img.big-data {
     background-color: #a80022; /* A red-like color */
 }
 
+/* --- NEW: Timer Styles --- */
+#timer {
+    width: 100%;
+    max-width: 320px;
+    margin: 10px auto;
+    padding: 10px;
+    background-color: #000;
+    border: 2px solid var(--mmsf-light-blue);
+    text-align: center;
+}
+
+#timer-display {
+    background-color: #1a2a1a;
+    color: #e0f0e0;
+    font-family: var(--font-title);
+    font-size: 28px;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 2px solid var(--mmsf-light-blue);
+}
+
+.timer-inputs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.timer-inputs input {
+    width: 60px;
+    background-color: #1a1a24;
+    border: 2px solid var(--mmsf-light-blue);
+    color: var(--mmsf-text-white);
+    font-family: var(--font-body);
+    font-size: 22px;
+    text-align: center;
+    padding: 5px;
+}
+.timer-inputs input::placeholder {
+    color: #556;
+}
+
+.timer-controls {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.timer-btn {
+    flex-grow: 1;
+    font-family: var(--font-title);
+    font-size: 14px;
+    color: var(--mmsf-text-white);
+    border: 2px solid var(--mmsf-text-black);
+    border-top-color: var(--mmsf-light-blue);
+    border-left-color: var(--mmsf-light-blue);
+    padding: 12px 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#start-timer { background-color: #008844; }
+#pause-timer { background-color: var(--mmsf-gold); color: var(--mmsf-text-black); }
+#reset-timer { background-color: #a80022; }
+
+.timer-btn:hover {
+    filter: brightness(1.2);
+}
+
 
 /* --- SCROLL BUTTONS --- */
 #back-to-top-btn, #scroll-to-bottom-btn {
