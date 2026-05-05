@@ -684,7 +684,6 @@ if (musicPlayerAudio) {
 }
 musicPlayerAudio = new Audio(); // Now it's safe to create the new player
 
-	const audio = new Audio();
 	let currentTrackIndex = 0;
 	let isPlaying = false;
 
@@ -703,7 +702,7 @@ musicPlayerAudio = new Audio(); // Now it's safe to create the new player
 
 	function loadTrack(index) {
 		const track = playlistData[index];
-		audio.src = track.src;
+		musicPlayerAudio.src = track.src;
 		albumArt.src = track.art;
 		trackTitle.textContent = track.title;
 		trackArtist.textContent = track.artist;
@@ -719,13 +718,13 @@ musicPlayerAudio = new Audio(); // Now it's safe to create the new player
 	function playTrack() {
 		isPlaying = true;
 		playPauseBtn.textContent = '⏸️';
-		audio.play();
+		musicPlayerAudio.play();
 	}
 
 	function pauseTrack() {
 		isPlaying = false;
 		playPauseBtn.textContent = '▶️';
-		audio.pause();
+		musicPlayerAudio.pause();
 	}
 
 	function formatTime(seconds) {
