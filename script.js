@@ -767,26 +767,26 @@ musicPlayerAudio = new Audio(); // Now it's safe to create the new player
 		playTrack();
 	});
 
-	audio.addEventListener('loadedmetadata', () => {
-		durationEl.textContent = formatTime(audio.duration);
-		seekBar.max = audio.duration;
+	musicPlayerAudio.addEventListener('loadedmetadata', () => {
+		durationEl.textContent = formatTime(musicPlayerAudio.duration);
+		seekBar.max = musicPlayerAudio.duration;
 	});
 
-	audio.addEventListener('timeupdate', () => {
-		currentTimeEl.textContent = formatTime(audio.currentTime);
-		seekBar.value = audio.currentTime;
+	musicPlayerAudio.addEventListener('timeupdate', () => {
+		currentTimeEl.textContent = formatTime(musicPlayerAudio.currentTime);
+		seekBar.value = musicPlayerAudio.currentTime;
 	});
 
 	seekBar.addEventListener('input', () => {
-		audio.currentTime = seekBar.value;
+		musicPlayerAudio.currentTime = seekBar.value;
 	});
 	
-	audio.addEventListener('ended', () => {
+	musicPlayerAudio.addEventListener('ended', () => {
 		nextBtn.click(); // Autoplay next track
 	});
 
 	volumeBar.addEventListener('input', () => {
-		audio.volume = volumeBar.value;
+		musicPlayerAudio.volume = volumeBar.value;
 	});
 	
 	// Initial setup
