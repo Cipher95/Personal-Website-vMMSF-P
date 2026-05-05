@@ -335,6 +335,44 @@ document.addEventListener('DOMContentLoaded', () => {
                     `
                 },
 				{
+id: 'music_playlist',
+title: 'Music Playlist',
+image: 'others/music_placeholder.png',
+description: `
+<div id="music-player">
+<div id="music-info">
+<img src="others/music_placeholder.png" alt="Album Art" id="album-art">
+<div>
+<h3 id="track-title">Select a Song</h3>
+<p id="track-artist">Playlist</p>
+</div>
+</div>
+<div class="progress-container">
+<span id="current-time">0:00</span>
+<input type="range" id="seek-bar" value="0" step="1">
+<span id="duration">0:00</span>
+</div>
+<div id="music-controls">
+<button id="prev-btn">⏮</button>
+<button id="play-pause-btn">▶️</button>
+<button id="next-btn">⏭</button>
+</div>
+<div class="volume-container">
+<span>🔊</span>
+<input type="range" id="volume-bar" min="0" max="1" value="1" step="0.1">
+</div>
+<ul id="playlist"></ul>
+</div>
+`,
+playlist: [
+{ title: "Club Strong Stage", artist: "Mega Man Star Force 3｜CAPCOM", src: "https://lambda.vgmtreasurechest.com/soundtracks/mega-man-star-force-3/qzeaqomnbx/23.%20Club%20Strong%20Stage.mp3", art: "others/ac_zero_cover.jpg" },
+{ title: "Title", artist: "Mega Man Star Force Legacy Collection｜CAPCOM", src: "https://vgmtreasurechest.com/soundtracks/mega-man-star-force-ds-gamerip-2006/imjlawgq/01.%20Theme%20of%20Ryuusei%20no%20Rockman.mp3", art: "others/ac_zero_cover.jpg" },
+{ title: "Sortie I", artist: "Ace Combat Zero: The Belkan War｜BANDAI NAMCO", src: "https://lambda.vgmtreasurechest.com/soundtracks/ace-combat-zero-the-belkan-war-ps2-gamerip-2006/cwzjuwao/1-03.%20Tetzukazu%20Nakanishi%20-%20Sortie%20I.mp3", art: "others/mmsf_cover.jpg" },
+{ title: "Silver Staff", artist: "MechWarrior 2: 31st Century Combat｜Activision", src: "https://lambda.vgmtreasurechest.com/soundtracks/mechwarrior-2-31st-century-combat-ibm-pc-macos-ms-dos-windows-gamerip-1995/cbzvfpgo/20%20-%20Silver%20Staff.mp3", art: "others/mmsf_cover.jpg" },
+	{ title: "Space Station", artist: "Mega Man Star Force｜CAPCOM", src: "https://vgmtreasurechest.com/soundtracks/mega-man-star-force-ds-gamerip-2006/bjougxtc/09.%20The%20Space%20Station%20%27Kizuna%27.mp3", art: "others/mmsf_cover.jpg" }
+]
+},
+				{
                     id: 'World_Wide_Map',
                     title: 'World Wide Map',
                     image: 'others/World-Map-Board.jpg',
@@ -444,6 +482,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 		if (firstGame.id === 'calculator') initializeCalculator();
         if (firstGame.id === 'timer') initializeTimer();
+		 if (firstGame.id === 'music_playlist') initializeMusicPlayer(firstGame.playlist);
 
         const navButtons = displayArea.querySelectorAll('.others-nav-btn');
         navButtons.forEach(button => {
@@ -460,6 +499,7 @@ document.addEventListener('DOMContentLoaded', () => {
 				 // If the selected item is the calculator, initialize its script
                 if (gameId === 'calculator') initializeCalculator();
                 if (gameId === 'timer') initializeTimer();
+				if (gameId === 'music_playlist') initializeMusicPlayer(gameData.playlist);
             });
         });
     }
@@ -627,6 +667,120 @@ document.addEventListener('DOMContentLoaded', () => {
         resetBtn.addEventListener('click', resetTimer);
     }
 
+	function initializeMusicPlayer(playlistData) {
+	const musicPlayer = document.getElementById('music-player');
+	if (!musicPlayer) return;
+
+	const audio = new Audio();
+	let currentTrackIndex = 0;
+	let isPlaying = false;
+
+	// Select elements
+	const albumArt = document.getElementById('album-art');
+	const trackTitle = document.getElementById('track-title');
+	const trackArtist = document.getElementById('track-artist');
+	const currentTimeEl = document.getElementById('current-time');
+	const durationEl = document.getElementById('duration');
+	const seekBar = document.getElementById('seek-bar');
+	const playPauseBtn = document.getElementById('play-pause-btn');
+	const prevBtn = document.getElementById('prev-btn');
+	const nextBtn = document.getElementById('next-btn');
+	const volumeBar = document.getElementById('volume-bar');
+	const playlistEl = document.getElementById('playlist');
+
+	function loadTrack(index) {
+		const track = playlistData[index];
+		audio.src = track.src;
+		albumArt.src = track.art;
+		trackTitle.textContent = track.title;
+		trackArtist.textContent = track.artist;
+		currentTrackIndex = index;
+		
+		// Highlight active track in playlist
+		const playlistItems = playlistEl.querySelectorAll('li');
+		playlistItems.forEach((item, i) => {
+			item.classList.toggle('active', i === index);
+		});
+	}
+
+	function playTrack() {
+		isPlaying = true;
+		playPauseBtn.textContent = '⏸️';
+		audio.play();
+	}
+
+	function pauseTrack() {
+		isPlaying = false;
+		playPauseBtn.textContent = '▶️';
+		audio.pause();
+	}
+
+	function formatTime(seconds) {
+		const minutes = Math.floor(seconds / 60);
+		const secs = Math.floor(seconds % 60);
+		return `${minutes}:${String(secs).padStart(2, '0')}`;
+	}
+
+	function buildPlaylist() {
+		playlistEl.innerHTML = '';
+		playlistData.forEach((track, index) => {
+			const li = document.createElement('li');
+			li.textContent = `${track.title} - ${track.artist}`;
+			li.addEventListener('click', () => {
+				loadTrack(index);
+				playTrack();
+			});
+			playlistEl.appendChild(li);
+		});
+	}
+
+	// Event Listeners
+	playPauseBtn.addEventListener('click', () => {
+		if (isPlaying) {
+			pauseTrack();
+		} else {
+			playTrack();
+		}
+	});
+
+	nextBtn.addEventListener('click', () => {
+		currentTrackIndex = (currentTrackIndex + 1) % playlistData.length;
+		loadTrack(currentTrackIndex);
+		playTrack();
+	});
+
+	prevBtn.addEventListener('click', () => {
+		currentTrackIndex = (currentTrackIndex - 1 + playlistData.length) % playlistData.length;
+		loadTrack(currentTrackIndex);
+		playTrack();
+	});
+
+	audio.addEventListener('loadedmetadata', () => {
+		durationEl.textContent = formatTime(audio.duration);
+		seekBar.max = audio.duration;
+	});
+
+	audio.addEventListener('timeupdate', () => {
+		currentTimeEl.textContent = formatTime(audio.currentTime);
+		seekBar.value = audio.currentTime;
+	});
+
+	seekBar.addEventListener('input', () => {
+		audio.currentTime = seekBar.value;
+	});
+	
+	audio.addEventListener('ended', () => {
+		nextBtn.click(); // Autoplay next track
+	});
+
+	volumeBar.addEventListener('input', () => {
+		audio.volume = volumeBar.value;
+	});
+	
+	// Initial setup
+	buildPlaylist();
+	loadTrack(0);
+}
 
     function switchContent(pageKey) {
         const data = pageData[pageKey];
