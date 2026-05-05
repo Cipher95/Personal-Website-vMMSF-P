@@ -449,6 +449,120 @@ img.big-data {
 .timer-btn:hover {
     filter: brightness(1.2);
 }
+/* --- NEW: Music Player Styles --- */
+#music-player {
+    width: 100%;
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: rgba(0,0,0,0.6);
+    border: 2px solid var(--mmsf-light-blue);
+    text-align: center;
+}
+
+#music-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+#album-art {
+    width: 80px;
+    height: 80px;
+    border: 2px solid var(--mmsf-light-blue);
+}
+
+#track-title {
+    font-family: var(--font-title);
+    font-size: 16px;
+    color: var(--mmsf-gold);
+}
+
+#track-artist {
+    font-size: 20px;
+    color: var(--mmsf-text-white);
+}
+
+#music-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 15px;
+}
+
+#music-controls button {
+    background: none;
+    border: none;
+    color: var(--mmsf-text-white);
+    font-size: 30px;
+    cursor: pointer;
+}
+
+#play-pause-btn {
+    font-size: 40px;
+}
+
+.progress-container, .volume-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+}
+
+.progress-container {
+    margin-bottom: 10px;
+}
+
+#seek-bar, #volume-bar {
+    flex-grow: 1;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 8px;
+    background: var(--mmsf-dark-blue);
+    outline: none;
+    border: 1px solid var(--mmsf-light-blue);
+}
+
+#seek-bar::-webkit-slider-thumb, #volume-bar::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    background: var(--mmsf-gold);
+    cursor: pointer;
+    border: 2px solid var(--mmsf-text-black);
+}
+
+#playlist {
+    list-style: none;
+    margin-top: 20px;
+    max-height: 200px;
+    overflow-y: auto;
+    text-align: left;
+    background: rgba(0,0,0,0.4);
+    padding: 10px;
+}
+
+#playlist li {
+    padding: 8px;
+    font-size: 20px;
+    cursor: pointer;
+    border-bottom: 1px solid var(--mmsf-dark-blue);
+}
+
+#playlist li:hover {
+    background-color: var(--mmsf-dark-blue);
+}
+
+#playlist li.active {
+    background-color: var(--mmsf-light-blue);
+    color: var(--mmsf-text-black);
+    font-weight: bold;
+}
+
 
 
 /* --- SCROLL BUTTONS --- */
