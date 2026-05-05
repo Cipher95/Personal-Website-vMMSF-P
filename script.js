@@ -492,10 +492,11 @@ playlist: [
                 const gameData = othersData.games.find(g => g.id === gameId);
                 if (!gameData) return;
 				// Stop music if it's playing and we switch to something else
-                if (musicPlayerAudio && gameId !== 'music_playlist') {
-                    musicPlayerAudio.pause();
-                    musicPlayerAudio = null;
-                }
+                if (musicPlayerAudio) {
+    musicPlayerAudio.pause();
+    musicPlayerAudio.removeAttribute('src'); // Completely clears the memory
+    musicPlayerAudio = null;
+}
 
                 document.getElementById('others-game-description').innerHTML = gameData.description;
 
@@ -676,6 +677,12 @@ playlist: [
 	function initializeMusicPlayer(playlistData) {
 	const musicPlayer = document.getElementById('music-player');
 	if (!musicPlayer) return;
+		// CRITICAL FIX: Ensure no duplicate audio object is running before making a new one
+if (musicPlayerAudio) {
+    musicPlayerAudio.pause();
+    musicPlayerAudio.removeAttribute('src');
+}
+musicPlayerAudio = new Audio(); // Now it's safe to create the new player
 
 	const audio = new Audio();
 	let currentTrackIndex = 0;
@@ -792,6 +799,7 @@ playlist: [
 		// Stop music if it's playing when switching main pages
         if (musicPlayerAudio) {
             musicPlayerAudio.pause();
+			musicPlayerAudio.removeAttribute('src'); // Completely unload it
             musicPlayerAudio = null;
         }
         const data = pageData[pageKey];
