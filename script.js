@@ -1,5 +1,6 @@
 
 document.addEventListener('DOMContentLoaded', () => {
+	let musicPlayerAudio = null; // Holds the music player's audio instance
 
     // --- DATA STORE ---
     const pageData = {
@@ -337,7 +338,7 @@ document.addEventListener('DOMContentLoaded', () => {
 				{
 id: 'music_playlist',
 title: 'Music Playlist',
-image: 'others/music_placeholder.png',
+image: 'others/musical-pentagram-sound-waves-notes-background_1017-33911.avif',
 description: `
 <div id="music-player">
 <div id="music-info">
@@ -490,6 +491,11 @@ playlist: [
                 const gameId = button.getAttribute('data-game-id');
                 const gameData = othersData.games.find(g => g.id === gameId);
                 if (!gameData) return;
+				// Stop music if it's playing and we switch to something else
+                if (musicPlayerAudio && gameId !== 'music_playlist') {
+                    musicPlayerAudio.pause();
+                    musicPlayerAudio = null;
+                }
 
                 document.getElementById('others-game-description').innerHTML = gameData.description;
 
@@ -783,6 +789,11 @@ playlist: [
 }
 
     function switchContent(pageKey) {
+		// Stop music if it's playing when switching main pages
+        if (musicPlayerAudio) {
+            musicPlayerAudio.pause();
+            musicPlayerAudio = null;
+        }
         const data = pageData[pageKey];
         if (!data) return;
 
