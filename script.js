@@ -406,10 +406,17 @@ playlist: [
                     `
                 },{
                     id: 'Live_Stream_2',
-                    title: 'Live Stream (timthetatmanvods)',
+                    title: 'Live Stream (TimTheTatmanVODs)',
                     image: 'others/Twitch-1440.webp',
                     description: `
                         <iframe src="https://player.twitch.tv/?channel=timthetatmanvods&parent=cipher95.github.io" frameborder="0" allowfullscreen="true" scrolling="no" height="378" width="100%"></iframe>
+                    `
+                },{
+                    id: 'Live_Stream_3',
+                    title: 'Live Stream (20XXpo)',
+                    image: 'others/Twitch-1440.webp',
+                    description: `
+                        <iframe src="https://player.twitch.tv/?channel=20xxpo&parent=cipher95.github.io" frameborder="0" allowfullscreen="true" scrolling="no" height="378" width="100%"></iframe>
                     `
                 }
             ]
