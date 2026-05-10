@@ -342,12 +342,12 @@ document.addEventListener('DOMContentLoaded', () => {
 					description: `
 						<div id="speedtest-container">
 							<h3>Network Speed Test</h3>
-							<p>Click the button below to simulate a network performance check.</p>
+							<p>Click the button below to perform a live network performance check via Cloudflare.</p>
 							<button id="run-speedtest-btn">Start Test</button>
 							<div id="speedtest-results" style="display: none;">
+								<p><strong>Latency:</strong> <span id="latency"></span> ms</p>
 								<p><strong>Download Speed:</strong> <span id="download-speed"></span> Mbps</p>
 								<p><strong>Upload Speed:</strong> <span id="upload-speed"></span> Mbps</p>
-								<p><strong>Latency:</strong> <span id="latency"></span> ms</p>
 							</div>
 						</div>
 					`
@@ -822,34 +822,69 @@ musicPlayerAudio = new Audio(); // Now it's safe to create the new player
 
 		if (!runBtn) return;
 
-		runBtn.addEventListener('click', () => {
+		runBtn.addEventListener('click', async () => {
 			runBtn.disabled = true;
-			runBtn.textContent = 'Testing...';
 			resultsContainer.style.display = 'block'; 
 			downloadEl.textContent = '...';
 			uploadEl.textContent = '...';
 			latencyEl.textContent = '...';
 
-			// Simulate latency test
-			setTimeout(() => {
-				const latency = (Math.random() * (50 - 5) + 5).toFixed(0);
-				latencyEl.textContent = latency;
-			}, 500);
+			try {
+				// 1. Latency Test
+				runBtn.textContent = 'Testing Latency...';
+				let totalLatency = 0;
+				for (let i = 0; i < 3; i++) {
+					const start = performance.now();
+					await fetch('https://speed.cloudflare.com/__down?bytes=0', { cache: 'no-store' });
+					totalLatency += (performance.now() - start);
+				}
+				const ping = (totalLatency / 3).toFixed(0);
+				latencyEl.textContent = ping;
 
-			// Simulate download test
-			setTimeout(() => {
-				const downloadSpeed = (Math.random() * (450 - 50) + 50).toFixed(2);
-				downloadEl.textContent = downloadSpeed;
-			}, 1500);
+				// 2. Download Test
+				runBtn.textContent = 'Testing Download...';
+				const dlSize = 5 * 1024 * 1024; // 5 MB test file
+				const dlStart = performance.now();
+				const dlResponse = await fetch(`https://speed.cloudflare.com/__down?bytes=${dlSize}`, { cache: 'no-store' });
+				await dlResponse.blob(); // Fully load the response into memory
+				const dlEnd = performance.now();
+				const dlDuration = (dlEnd - dlStart) / 1000; // in seconds
+				// Formula: (Bytes * 8 Bits) / (Seconds * 1,000,000 to get Mbps)
+				const dlSpeedMbps = ((dlSize * 8) / (dlDuration * 1000000)).toFixed(2);
+				downloadEl.textContent = dlSpeedMbps;
 
-			// Simulate upload test and finalize
-			setTimeout(() => {
-				const uploadSpeed = (Math.random() * (100 - 10) + 10).toFixed(2);
-				uploadEl.textContent = uploadSpeed;
+				// 3. Upload Test
+				runBtn.textContent = 'Testing Upload...';
+				const ulSize = 2 * 1024 * 1024; // 2 MB test payload
+				
+				// Create random binary data to avoid network compression cheating the real upload speed
+				const ulData = new Uint8Array(ulSize);
+				for (let i = 0; i < ulSize; i += 65536) {
+					crypto.getRandomValues(new Uint8Array(ulData.buffer, i, Math.min(65536, ulSize - i)));
+				}
+				const ulBlob = new Blob([ulData]);
+				
+				const ulStart = performance.now();
+				await fetch('https://speed.cloudflare.com/__up', {
+					method: 'POST',
+					body: ulBlob,
+					cache: 'no-store'
+				});
+				const ulEnd = performance.now();
+				const ulDuration = (ulEnd - ulStart) / 1000; // in seconds
+				const ulSpeedMbps = ((ulSize * 8) / (ulDuration * 1000000)).toFixed(2);
+				uploadEl.textContent = ulSpeedMbps;
 
+			} catch (error) {
+				console.error("Speedtest Error:", error);
+				if (latencyEl.textContent === '...') latencyEl.textContent = 'Err';
+				if (downloadEl.textContent === '...') downloadEl.textContent = 'Err';
+				if (uploadEl.textContent === '...') uploadEl.textContent = 'Err';
+				alert("Speedtest failed to connect to the test server.");
+			} finally {
 				runBtn.disabled = false;
 				runBtn.textContent = 'Run Test Again';
-			}, 2500);
+			}
 		});
 	}
 
