@@ -336,6 +336,23 @@ document.addEventListener('DOMContentLoaded', () => {
                     `
                 },
 				{
+					id: 'speedtest',
+					title: 'Speedtest',
+					image: 'UNMMSF3Gemini.webp',
+					description: `
+						<div id="speedtest-container">
+							<h3>Network Speed Test</h3>
+							<p>Click the button below to simulate a network performance check.</p>
+							<button id="run-speedtest-btn">Start Test</button>
+							<div id="speedtest-results" style="display: none;">
+								<p><strong>Download Speed:</strong> <span id="download-speed"></span> Mbps</p>
+								<p><strong>Upload Speed:</strong> <span id="upload-speed"></span> Mbps</p>
+								<p><strong>Latency:</strong> <span id="latency"></span> ms</p>
+							</div>
+						</div>
+					`
+				},
+				{
 id: 'music_playlist',
 title: 'Music Playlist',
 image: 'others/musical-pentagram-sound-waves-notes-background_1017-33911.avif',
@@ -484,6 +501,7 @@ playlist: [
 		if (firstGame.id === 'calculator') initializeCalculator();
         if (firstGame.id === 'timer') initializeTimer();
 		 if (firstGame.id === 'music_playlist') initializeMusicPlayer(firstGame.playlist);
+		 if (firstGame.id === 'speedtest') initializeSpeedtest();
 
         const navButtons = displayArea.querySelectorAll('.others-nav-btn');
         navButtons.forEach(button => {
@@ -507,6 +525,7 @@ playlist: [
                 if (gameId === 'calculator') initializeCalculator();
                 if (gameId === 'timer') initializeTimer();
 				if (gameId === 'music_playlist') initializeMusicPlayer(gameData.playlist);
+				if (gameId === 'speedtest') initializeSpeedtest();
             });
         });
     }
@@ -793,6 +812,46 @@ musicPlayerAudio = new Audio(); // Now it's safe to create the new player
 	buildPlaylist();
 	loadTrack(0);
 }
+
+	function initializeSpeedtest() {
+		const runBtn = document.getElementById('run-speedtest-btn');
+		const resultsContainer = document.getElementById('speedtest-results');
+		const downloadEl = document.getElementById('download-speed');
+		const uploadEl = document.getElementById('upload-speed');
+		const latencyEl = document.getElementById('latency');
+
+		if (!runBtn) return;
+
+		runBtn.addEventListener('click', () => {
+			runBtn.disabled = true;
+			runBtn.textContent = 'Testing...';
+			resultsContainer.style.display = 'block'; 
+			downloadEl.textContent = '...';
+			uploadEl.textContent = '...';
+			latencyEl.textContent = '...';
+
+			// Simulate latency test
+			setTimeout(() => {
+				const latency = (Math.random() * (50 - 5) + 5).toFixed(0);
+				latencyEl.textContent = latency;
+			}, 500);
+
+			// Simulate download test
+			setTimeout(() => {
+				const downloadSpeed = (Math.random() * (450 - 50) + 50).toFixed(2);
+				downloadEl.textContent = downloadSpeed;
+			}, 1500);
+
+			// Simulate upload test and finalize
+			setTimeout(() => {
+				const uploadSpeed = (Math.random() * (100 - 10) + 10).toFixed(2);
+				uploadEl.textContent = uploadSpeed;
+
+				runBtn.disabled = false;
+				runBtn.textContent = 'Run Test Again';
+			}, 2500);
+		});
+	}
 
     function switchContent(pageKey) {
 		// Stop music if it's playing when switching main pages
