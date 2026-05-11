@@ -353,6 +353,46 @@ document.addEventListener('DOMContentLoaded', () => {
 					`
 				},
 				{
+                    id: 'performance',
+                    title: 'Performance',
+                    image: 'UNMMSF3Gemini.webp',
+                    description: `
+                        <div id="performance-container">
+                            <h3>Device Performance Status</h3>
+                            
+                            <div class="performance-metric" id="cpu-metric">
+                                <p><strong>CPU:</strong> <span id="cpu-cores">N/A</span> Cores</p>
+                                <div class="progress-bar-container"><div id="cpu-bar" class="progress-bar" style="width: 100%; background-color: var(--mmsf-gold);"></div></div>
+                                <p><strong>Status:</strong> Active</p>
+                            </div>
+                            
+                            <div class="performance-metric" id="memory-metric">
+                                <p><strong>Memory (RAM):</strong> <span id="memory-total">N/A</span> GB</p>
+                                <p><strong>Heap Usage:</strong> <span id="memory-used">N/A</span></p>
+                                <div class="progress-bar-container"><div id="memory-bar" class="progress-bar"></div></div>
+                            </div>
+                            
+                            <div class="performance-metric" id="disk-metric">
+                                <p><strong>Disk (Storage):</strong> <span id="disk-used">N/A</span> / <span id="disk-total">N/A</span></p>
+                                <div class="progress-bar-container"><div id="disk-bar" class="progress-bar"></div></div>
+                            </div>
+                            
+                            <div class="performance-metric" id="ethernet-metric">
+                                <p><strong>Ethernet (Network):</strong> <span id="network-status">N/A</span></p>
+                                <p><strong>Type:</strong> <span id="network-type">N/A</span></p>
+                                <p><strong>Downlink Speed:</strong> <span id="network-downlink">N/A</span></p>
+                            </div>
+                            
+                            <div class="performance-metric" id="gpu-metric">
+                                <p><strong>GPU:</strong> <span id="gpu-info">N/A</span></p>
+                                <div class="progress-bar-container"><div id="gpu-bar" class="progress-bar" style="width: 100%; background-color: #00a843;"></div></div>
+                                <p><strong>Status:</strong> Hardware Accelerated</p>
+                            </div>
+                            
+                        </div>
+                    `
+                },
+				{
 id: 'music_playlist',
 title: 'Music Playlist',
 image: 'others/musical-pentagram-sound-waves-notes-background_1017-33911.avif',
@@ -509,6 +549,7 @@ playlist: [
         if (firstGame.id === 'timer') initializeTimer();
 		 if (firstGame.id === 'music_playlist') initializeMusicPlayer(firstGame.playlist);
 		 if (firstGame.id === 'speedtest') initializeSpeedtest();
+		if (firstGame.id === 'performance') initializePerformanceTracker();
 
         const navButtons = displayArea.querySelectorAll('.others-nav-btn');
         navButtons.forEach(button => {
@@ -533,6 +574,7 @@ playlist: [
                 if (gameId === 'timer') initializeTimer();
 				if (gameId === 'music_playlist') initializeMusicPlayer(gameData.playlist);
 				if (gameId === 'speedtest') initializeSpeedtest();
+				if (gameId === 'performance') initializePerformanceTracker();
             });
         });
     }
@@ -894,6 +936,128 @@ musicPlayerAudio = new Audio(); // Now it's safe to create the new player
 			}
 		});
 	}
+	function initializePerformanceTracker() {
+		const cpuCoresEl = document.getElementById('cpu-cores');
+		const memoryTotalEl = document.getElementById('memory-total');
+		const memoryUsedEl = document.getElementById('memory-used');
+		const memoryBarEl = document.getElementById('memory-bar');
+		const diskUsedEl = document.getElementById('disk-used');
+		const diskTotalEl = document.getElementById('disk-total');
+		const diskBarEl = document.getElementById('disk-bar');
+		const networkStatusEl = document.getElementById('network-status');
+		const networkTypeEl = document.getElementById('network-type');
+		const networkDownlinkEl = document.getElementById('network-downlink');
+		const gpuInfoEl = document.getElementById('gpu-info');
+	
+		let perfInterval;
+	
+		// --- CPU Info ---
+		if (navigator.hardwareConcurrency) {
+			cpuCoresEl.textContent = navigator.hardwareConcurrency;
+		}
+	
+		// --- Memory Info (Static Total) ---
+		if (navigator.deviceMemory) {
+			memoryTotalEl.textContent = navigator.deviceMemory;
+		}
+	
+		// --- GPU Info ---
+		try {
+			const canvas = document.createElement('canvas');
+			const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+			if (gl) {
+				const debugInfo = gl.getExtension('WEBGL_debug_renderer_info');
+				if (debugInfo) {
+					const renderer = gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL);
+					gpuInfoEl.textContent = renderer;
+				} else {
+					 gpuInfoEl.textContent = 'Available (Details Hidden)';
+				}
+			} else {
+				gpuInfoEl.textContent = 'WebGL not supported';
+			}
+		} catch (e) {
+			gpuInfoEl.textContent = 'Error getting GPU info';
+		}
+	
+		// --- Disk Info ---
+		async function updateDiskInfo() {
+			if (navigator.storage && navigator.storage.estimate) {
+				try {
+					const estimate = await navigator.storage.estimate();
+					const usedGB = (estimate.usage / (1024 * 1024 * 1024)).toFixed(2);
+					const totalGB = (estimate.quota / (1024 * 1024 * 1024)).toFixed(2);
+					if (diskUsedEl) diskUsedEl.textContent = `${usedGB} GB`;
+					if (diskTotalEl) diskTotalEl.textContent = `${totalGB} GB`;
+					
+					const percentage = (estimate.usage / estimate.quota) * 100;
+					if (diskBarEl) {
+						diskBarEl.style.width = `${percentage}%`;
+						if(percentage > 90) diskBarEl.style.backgroundColor = '#a80022';
+						else if(percentage > 70) diskBarEl.style.backgroundColor = 'var(--mmsf-gold)';
+						else diskBarEl.style.backgroundColor = '#00a843';
+					}
+				} catch(e) {
+					if (diskUsedEl) diskUsedEl.textContent = 'N/A';
+					if (diskTotalEl) diskTotalEl.textContent = 'N/A';
+				}
+			} else {
+				if (diskUsedEl) diskUsedEl.textContent = 'Not Supported';
+				if (diskTotalEl) diskTotalEl.textContent = 'Not Supported';
+			}
+		}
+		updateDiskInfo();
+	
+		// --- Ethernet / Network Info ---
+		function updateNetworkStatus() {
+			if (!document.getElementById('network-status')) return; // element removed
+			networkStatusEl.textContent = navigator.onLine ? 'Connected' : 'Disconnected';
+			networkStatusEl.style.color = navigator.onLine ? '#00e676' : '#ff1744';
+	
+			const conn = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+			if (conn) {
+				networkTypeEl.textContent = conn.effectiveType ? conn.effectiveType.toUpperCase() : 'Unknown';
+				networkDownlinkEl.textContent = conn.downlink ? `${conn.downlink} Mbps` : 'Unknown';
+			} else {
+				networkTypeEl.textContent = 'N/A';
+				networkDownlinkEl.textContent = 'N/A';
+			}
+		}
+		updateNetworkStatus();
+		window.addEventListener('online', updateNetworkStatus);
+		window.addEventListener('offline', updateNetworkStatus);
+		const conn = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+		if(conn) {
+			conn.addEventListener('change', updateNetworkStatus);
+		}
+	
+		// --- Memory Heap Usage (Dynamic) ---
+		function updateMemoryLoop() {
+			if (!document.getElementById('memory-used')) {
+				clearInterval(perfInterval); // Cleanup when element is gone
+				return;
+			}
+			if (performance && performance.memory) {
+				const usedJSHeapSize = (performance.memory.usedJSHeapSize / (1024 * 1024)).toFixed(2);
+				const jsHeapSizeLimit = (performance.memory.jsHeapSizeLimit / (1024 * 1024)).toFixed(2);
+				memoryUsedEl.textContent = `${usedJSHeapSize} MB / ${jsHeapSizeLimit} MB`;
+				
+				const memPercent = (performance.memory.usedJSHeapSize / performance.memory.jsHeapSizeLimit) * 100;
+				memoryBarEl.style.width = `${memPercent}%`;
+				
+				if(memPercent > 80) memoryBarEl.style.backgroundColor = '#a80022';
+				else if(memPercent > 50) memoryBarEl.style.backgroundColor = 'var(--mmsf-gold)';
+				else memoryBarEl.style.backgroundColor = '#00a843';
+			} else {
+				memoryUsedEl.textContent = 'API Not Supported';
+				memoryBarEl.style.width = '0%';
+				clearInterval(perfInterval);
+			}
+		}
+		updateMemoryLoop();
+		perfInterval = setInterval(updateMemoryLoop, 1000);
+	}
+
 
     function switchContent(pageKey) {
 		// Stop music if it's playing when switching main pages
