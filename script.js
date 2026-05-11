@@ -434,6 +434,13 @@ document.addEventListener('DOMContentLoaded', () => {
                                 <p><strong>Type:</strong> <span id="network-type">N/A</span></p>
                                 <p><strong>Downlink Speed:</strong> <span id="network-downlink">N/A</span></p>
                             </div>
+
+                            <!-- NEW WI-FI METRIC -->
+                            <div class="performance-metric" id="wifi-metric">
+                                <p><strong>Wi-Fi:</strong> <span id="wifi-status">N/A</span></p>
+                                <p><strong>Type:</strong> <span id="wifi-type">N/A</span></p>
+                                <p><strong>Downlink Speed:</strong> <span id="wifi-downlink">N/A</span></p>
+                            </div>
                             
                             <div class="performance-metric" id="gpu-metric">
                                 <p><strong>GPU:</strong> <span id="gpu-info">N/A</span></p>
@@ -1004,7 +1011,13 @@ musicPlayerAudio = new Audio(); // Now it's safe to create the new player
 		const networkStatusEl = document.getElementById('network-status');
 		const networkTypeEl = document.getElementById('network-type');
 		const networkDownlinkEl = document.getElementById('network-downlink');
-		const gpuInfoEl = document.getElementById('gpu-info');
+		
+        // --- NEW WI-FI ELEMENTS ---
+		const wifiStatusEl = document.getElementById('wifi-status');
+		const wifiTypeEl = document.getElementById('wifi-type');
+		const wifiDownlinkEl = document.getElementById('wifi-downlink');
+		
+        const gpuInfoEl = document.getElementById('gpu-info');
 	
 		let perfInterval;
 	
@@ -1065,27 +1078,54 @@ musicPlayerAudio = new Audio(); // Now it's safe to create the new player
 		}
 		updateDiskInfo();
 	
-		// --- Ethernet / Network Info ---
+		// --- Ethernet & Wi-Fi / Network Info ---
 		function updateNetworkStatus() {
 			if (!document.getElementById('network-status')) return; // element removed
-			networkStatusEl.textContent = navigator.onLine ? 'Connected' : 'Disconnected';
-			networkStatusEl.style.color = navigator.onLine ? '#00e676' : '#ff1744';
-	
+			
+			const isOnline = navigator.onLine;
 			const conn = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
-			if (conn) {
-				networkTypeEl.textContent = conn.effectiveType ? conn.effectiveType.toUpperCase() : 'Unknown';
-				networkDownlinkEl.textContent = conn.downlink ? `${conn.downlink} Mbps` : 'Unknown';
-			} else {
-				networkTypeEl.textContent = 'N/A';
-				networkDownlinkEl.textContent = 'N/A';
+			
+			let connType = 'unknown';
+			if (conn && conn.type) {
+				connType = conn.type; // 'wifi', 'ethernet', 'cellular', etc.
 			}
-		}
-		updateNetworkStatus();
-		window.addEventListener('online', updateNetworkStatus);
-		window.addEventListener('offline', updateNetworkStatus);
-		const conn = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
-		if(conn) {
-			conn.addEventListener('change', updateNetworkStatus);
+
+			// Default everything to Disconnected
+			networkStatusEl.textContent = 'Disconnected';
+			networkStatusEl.style.color = '#ff1744';
+			networkTypeEl.textContent = 'N/A';
+			networkDownlinkEl.textContent = 'N/A';
+
+			if (wifiStatusEl) {
+				wifiStatusEl.textContent = 'Disconnected';
+				wifiStatusEl.style.color = '#ff1744';
+				wifiTypeEl.textContent = 'N/A';
+				wifiDownlinkEl.textContent = 'N/A';
+			}
+
+			// Assign the active connection
+			if (isOnline) {
+				let effectiveType = conn && conn.effectiveType ? conn.effectiveType.toUpperCase() : 'Unknown';
+				let downlink = conn && conn.downlink ? `${conn.downlink} Mbps` : 'Unknown';
+
+				if (connType === 'wifi') {
+					wifiStatusEl.textContent = 'Connected';
+					wifiStatusEl.style.color = '#00e676'; // Green
+					wifiTypeEl.textContent = effectiveType;
+					wifiDownlinkEl.textContent = downlink;
+				} else if (connType === 'ethernet') {
+					networkStatusEl.textContent = 'Connected';
+					networkStatusEl.style.color = '#00e676'; // Green
+					networkTypeEl.textContent = effectiveType;
+					networkDownlinkEl.textContent = downlink;
+				} else {
+					// Fallback for browsers (like Firefox/Safari) that don't expose strict connection type
+					networkStatusEl.textContent = 'Connected';
+					networkStatusEl.style.color = '#00e676';
+					networkTypeEl.textContent = connType !== 'unknown' ? `${effectiveType} (${connType})` : effectiveType;
+					networkDownlinkEl.textContent = downlink;
+				}
+			}
 		}
 	
 		// --- Memory Heap Usage (Dynamic) ---
