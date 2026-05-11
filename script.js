@@ -476,10 +476,11 @@ description: `
 `,
 playlist: [
 { title: "Club Strong Stage", artist: "Mega Man Star Force 3｜CAPCOM", src: "https://lambda.vgmtreasurechest.com/soundtracks/mega-man-star-force-3/qzeaqomnbx/23.%20Club%20Strong%20Stage.mp3", art: "https://howlongtobeat.com/games/5840_Mega_Man_Star_Force_3.png" },
-{ title: "Title", artist: "Mega Man Star Force｜CAPCOM", src: "https://vgmtreasurechest.com/soundtracks/mega-man-star-force-ds-gamerip-2006/imjlawgq/01.%20Theme%20of%20Ryuusei%20no%20Rockman.mp3", art: "https://howlongtobeat.com/games/5838_Mega_Man_Star_Force.png" },
 { title: "Sortie I", artist: "Ace Combat Zero: The Belkan War｜BANDAI NAMCO", src: "https://lambda.vgmtreasurechest.com/soundtracks/ace-combat-zero-the-belkan-war-ps2-gamerip-2006/cwzjuwao/1-03.%20Tetzukazu%20Nakanishi%20-%20Sortie%20I.mp3", art: "https://m.media-amazon.com/images/M/MV5BYWE1OGQyY2UtNDQ0Ny00MmIwLTlmODUtZjZhYWY1YzRiMjM0XkEyXkFqcGc@._V1_.jpg" },
 { title: "Silver Staff", artist: "MechWarrior 2: 31st Century Combat｜Activision", src: "https://lambda.vgmtreasurechest.com/soundtracks/mechwarrior-2-31st-century-combat-ibm-pc-macos-ms-dos-windows-gamerip-1995/cbzvfpgo/20%20-%20Silver%20Staff.mp3", art: "https://m.media-amazon.com/images/I/81zIkXTnTJL._AC_UF1000,1000_QL80_.jpg" },
-	{ title: "Space Station", artist: "Mega Man Star Force｜CAPCOM", src: "https://vgmtreasurechest.com/soundtracks/mega-man-star-force-ds-gamerip-2006/bjougxtc/09.%20The%20Space%20Station%20%27Kizuna%27.mp3", art: "https://howlongtobeat.com/games/5838_Mega_Man_Star_Force.png" }
+	{ title: "Space Station", artist: "Mega Man Star Force｜CAPCOM", src: "https://vgmtreasurechest.com/soundtracks/mega-man-star-force-ds-gamerip-2006/bjougxtc/09.%20The%20Space%20Station%20%27Kizuna%27.mp3", art: "https://howlongtobeat.com/games/5838_Mega_Man_Star_Force.png" },
+	{ title: "Black Hole Server", artist: "Mega Man Star Force 3｜CAPCOM", src: "https://lambda.vgmtreasurechest.com/soundtracks/mega-man-star-force-3/hjkpepbzin/48.%20Black%20Hole%20Server.mp3", art: "https://howlongtobeat.com/games/5840_Mega_Man_Star_Force_3.png" },
+	{ title: "Title", artist: "Mega Man Star Force｜CAPCOM", src: "https://vgmtreasurechest.com/soundtracks/mega-man-star-force-ds-gamerip-2006/imjlawgq/01.%20Theme%20of%20Ryuusei%20no%20Rockman.mp3", art: "https://howlongtobeat.com/games/5838_Mega_Man_Star_Force.png" }
 ]
 },
 				{
@@ -769,6 +770,7 @@ playlist: [
                 if (remainingTime <= 0) {
                     clearInterval(timerInterval);
                     timerInterval = null;
+					playAlarm(); // <-- ADD THIS LINE HERE
                 }
             }, 1000);
         }
