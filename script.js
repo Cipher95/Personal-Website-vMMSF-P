@@ -1,6 +1,58 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 	let musicPlayerAudio = null; // Holds the music player's audio instance
+	let audioCtx = null; // Holds the AudioContext for the beep sound
+
+	// --- NEW: Retro Beep Sound Function ---
+	function playBeep() {
+		if (!audioCtx) {
+			audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+		}
+		if (audioCtx.state === 'suspended') {
+			audioCtx.resume();
+		}
+		const oscillator = audioCtx.createOscillator();
+		const gainNode = audioCtx.createGain();
+		
+		oscillator.type = 'square'; // Retro tone to match the theme
+		oscillator.frequency.setValueAtTime(1046.50, audioCtx.currentTime); // C6 note
+		
+		gainNode.gain.setValueAtTime(0.05, audioCtx.currentTime); // Set initial volume
+		gainNode.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.1); // Quick fade out
+		
+		oscillator.connect(gainNode);
+		gainNode.connect(audioCtx.destination);
+		
+		oscillator.start();
+		oscillator.stop(audioCtx.currentTime + 0.1);
+	}
+	// --- NEW: Alarm Sound Function for Timer ---
+    function playAlarm() {
+        if (!audioCtx) {
+            audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        }
+        if (audioCtx.state === 'suspended') {
+            audioCtx.resume();
+        }
+        
+        // Play a sequence of 5 beeps for the alarm
+        for (let i = 0; i < 5; i++) {
+            const oscillator = audioCtx.createOscillator();
+            const gainNode = audioCtx.createGain();
+            
+            oscillator.type = 'square'; 
+            oscillator.frequency.setValueAtTime(880, audioCtx.currentTime + (i * 0.5)); // A5 note, slightly lower pitch than normal beep
+            
+            gainNode.gain.setValueAtTime(0.1, audioCtx.currentTime + (i * 0.5)); 
+            gainNode.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + (i * 0.5) + 0.3); // Fade out
+            
+            oscillator.connect(gainNode);
+            gainNode.connect(audioCtx.destination);
+            
+            oscillator.start(audioCtx.currentTime + (i * 0.5));
+            oscillator.stop(audioCtx.currentTime + (i * 0.5) + 0.3);
+        }
+    }
 
     // --- DATA STORE ---
     const pageData = {
@@ -603,6 +655,9 @@ playlist: [
         grid.addEventListener('click', (event) => {
             const { target } = event;
             if (!target.matches('button')) return;
+            
+            // Trigger the retro beep sound for every calculator button click
+            playBeep();
 
             if (target.dataset.action === 'calculate') {
                 handleOperator('=');
@@ -737,9 +792,9 @@ playlist: [
             updateDisplay();
         }
 
-        startBtn.addEventListener('click', startTimer);
-        pauseBtn.addEventListener('click', pauseTimer);
-        resetBtn.addEventListener('click', resetTimer);
+        startBtn.addEventListener('click', () => { playBeep(); startTimer(); });
+        pauseBtn.addEventListener('click', () => { playBeep(); pauseTimer(); });
+        resetBtn.addEventListener('click', () => { playBeep(); resetTimer(); });
     }
 
 	function initializeMusicPlayer(playlistData) {
