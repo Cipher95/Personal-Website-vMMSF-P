@@ -734,3 +734,41 @@ img.big-data {
 	color: var(--mmsf-gold);
 	font-family: var(--font-title);
 }
+/* --- NEW: Performance Tracker Styles --- */
+#performance-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-size: 20px;
+}
+
+.performance-metric {
+    background-color: rgba(0,0,0,0.4);
+    padding: 15px;
+    border-left: 4px solid var(--mmsf-gold);
+}
+
+.performance-metric p {
+    margin: 0 0 10px 0;
+}
+
+.performance-metric span {
+    font-family: var(--font-title);
+    color: var(--mmsf-light-blue);
+    font-size: 18px;
+}
+
+.progress-bar-container {
+    width: 100%;
+    height: 20px;
+    background-color: var(--mmsf-text-black);
+    border: 2px solid var(--mmsf-light-blue);
+    margin-bottom: 10px;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0%; /* Will be set by JS */
+    background-color: #00a843; /* Default green */
+    transition: width 0.5s ease-in-out, background-color 0.5s;
+}
