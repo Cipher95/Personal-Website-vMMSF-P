@@ -1127,6 +1127,13 @@ musicPlayerAudio = new Audio(); // Now it's safe to create the new player
 				}
 			}
 		}
+		updateNetworkStatus();
+		window.addEventListener('online', updateNetworkStatus);
+		window.addEventListener('offline', updateNetworkStatus);
+		const conn = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+		if(conn) {
+			conn.addEventListener('change', updateNetworkStatus);
+		}
 	
 		// --- Memory Heap Usage (Dynamic) ---
 		function updateMemoryLoop() {
