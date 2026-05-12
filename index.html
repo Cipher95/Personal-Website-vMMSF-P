@@ -18,6 +18,22 @@
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
 
    <link rel="stylesheet" href="style.css">
+    <script>
+        (function(d, s, id) {
+            if (d.getElementById(id)) {
+                if (window.__TOMORROW__) {
+                    window.__TOMORROW__.renderWidget();
+                }
+                return;
+            }
+            const fjs = d.getElementsByTagName(s)[0];
+            const js = d.createElement(s);
+            js.id = id;
+            js.src = "https://www.tomorrow.io/v1/widget/sdk/sdk.bundle.min.js";
+
+            fjs.parentNode.insertBefore(js, fjs);
+        })(document, 'script', 'tomorrow-sdk');
+        </script>
 </head>
 <body>
     <!-- New main wrapper for the game screen effect -->
