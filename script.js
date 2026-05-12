@@ -498,6 +498,35 @@ playlist: [
                         <div class="embed-map-responsive"><div class="embed-map-container"><iframe class="embed-map-frame" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=899&height=720&hl=en&q=&t=k&z=1&ie=UTF8&iwloc=B&output=embed"></iframe><a href="https://sprunkiretake.net" style="font-size:2px!important;color:gray!important;position:absolute;bottom:0;left:0;z-index:1;max-height:1px;overflow:hidden">Sprunki</a></div><style>.embed-map-responsive{position:relative;text-align:right;width:100%;height:0;padding-bottom:80.08898776418243%;}.embed-map-container{overflow:hidden;background:none!important;width:100%;height:100%;position:absolute;top:0;left:0;}.embed-map-frame{width:100%!important;height:100%!important;position:absolute;top:0;left:0;}</style></div>
                     `
                 },{
+                    id: 'Weather_Summary',
+                    title: 'Weather Summary',
+                    image: 'others/article.jpg',
+                    description: `
+                        <div class="tomorrow"
+           data-location-id=""
+           data-language="EN"
+           data-unit-system="METRIC"
+           data-skin="dark"
+           data-widget-type="summary"
+           style="padding-bottom:22px;position:relative;"
+        >
+          <a
+            href="https://weather.tomorrow.io/"
+            rel="nofollow noopener noreferrer"
+            target="_blank"
+            style="position: absolute; bottom: 0; transform: translateX(-50%); left: 50%;"
+          >
+            <img
+              alt="Powered by Tomorrow.io"
+              src="https://weather-website-client.tomorrow.io/img/powered-by.svg"
+              width="250"
+              height="18"
+            />
+          </a>
+        </div>
+                    `
+                },
+				{
                     id: 'Live_Stream_1',
                     title: 'Live Stream (shrood)',
                     image: 'others/Twitch-1440.webp',
