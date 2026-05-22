@@ -652,6 +652,7 @@ playlist: [
 		 if (firstGame.id === 'music_playlist') initializeMusicPlayer(firstGame.playlist);
 		 if (firstGame.id === 'speedtest') initializeSpeedtest();
 		if (firstGame.id === 'performance') initializePerformanceTracker();
+		if (firstGame.id === 'Forex_Cross_Rates') initializeForexWidget();
 
         const navButtons = displayArea.querySelectorAll('.others-nav-btn');
         navButtons.forEach(button => {
@@ -677,6 +678,7 @@ playlist: [
 				if (gameId === 'music_playlist') initializeMusicPlayer(gameData.playlist);
 				if (gameId === 'speedtest') initializeSpeedtest();
 				if (gameId === 'performance') initializePerformanceTracker();
+				if (gameId === 'Forex_Cross_Rates') initializeForexWidget();
             });
         });
     }
@@ -1203,7 +1205,34 @@ musicPlayerAudio = new Audio(); // Now it's safe to create the new player
 		updateMemoryLoop();
 		perfInterval = setInterval(updateMemoryLoop, 1000);
 	}
+	function initializeForexWidget() {
+    const container = document.querySelector('.tradingview-widget-container__widget');
+    if (!container) return;
 
+    // Clear the container in case the user clicks the button multiple times
+    container.innerHTML = '';
+
+    const script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = 'https://s3.tradingview.com/external-embedding/embed-widget-forex-cross-rates.js';
+    script.async = true;
+    
+    // Inject the configuration JSON
+    script.innerHTML = JSON.stringify({
+        "colorTheme": "dark",
+        "isTransparent": false,
+        "locale": "en",
+        "currencies": [
+            "EUR", "USD", "JPY", "GBP", "CHF", "AUD", "CAD", "NZD", "CNY", "TRY", "SEK", "NOK", "DKK", "ZAR", "HKD", "SGD", "THB", "MXN", "IDR", "KRW", "PLN", "ISK", "KWD", "AED", "RUB", "ARS", "CLP", "COP", "PEN", "UYU"
+        ],
+        "backgroundColor": "#0F0F0F",
+        "width": "100%",
+        "height": "100%"
+    });
+
+    // Append the script directly inside the widget container to execute it
+    container.appendChild(script);
+}
 
     function switchContent(pageKey) {
 		// Stop music if it's playing when switching main pages
