@@ -501,7 +501,6 @@ playlist: [
   <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/markets/currencies/" rel="noopener nofollow" target="_blank"><span class="blue-text">Forex market</span></a><span class="trademark"> by TradingView</span></div>
 </div>
 <!-- TradingView Widget END -->
-</div>
 `
 				},
 				{
