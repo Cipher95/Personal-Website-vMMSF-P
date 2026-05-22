@@ -499,48 +499,6 @@ playlist: [
 <div class="tradingview-widget-container">
   <div class="tradingview-widget-container__widget"></div>
   <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/markets/currencies/" rel="noopener nofollow" target="_blank"><span class="blue-text">Forex market</span></a><span class="trademark"> by TradingView</span></div>
-  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-forex-cross-rates.js" async>
-  {
-  "colorTheme": "dark",
-  "isTransparent": false,
-  "locale": "en",
-  "currencies": [
-    "EUR",
-    "USD",
-    "JPY",
-    "GBP",
-    "CHF",
-    "AUD",
-    "CAD",
-    "NZD",
-    "CNY",
-    "TRY",
-    "SEK",
-    "NOK",
-    "DKK",
-    "ZAR",
-    "HKD",
-    "SGD",
-    "THB",
-    "MXN",
-    "IDR",
-    "KRW",
-    "PLN",
-    "ISK",
-    "KWD",
-    "AED",
-    "RUB",
-    "ARS",
-    "CLP",
-    "COP",
-    "PEN",
-    "UYU"
-  ],
-  "backgroundColor": "#0F0F0F",
-  "width": "100%",
-  "height": "100%"
-}
-  </script>
 </div>
 <!-- TradingView Widget END -->
 </div>
