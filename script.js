@@ -167,141 +167,7 @@ document.addEventListener('DOMContentLoaded', () => {
             title: "Others",
             image: "others/image_11~0.png",
             intro: ``,
-            games: [
-                {
-                    id: 'CaptainTsubasaDreamTeam',
-                    title: 'Captain Tsubasa: Dream Team (8TH Anniversary)',
-                    image: 'others/CaptainTsubasaDreamTeam.jpg',
-                    description: `
-						<div class="project-card">
-						<img src="others/CaptainTsubasaDreamTeam.jpg" class="big-data">
-<p>I played Captain Tsubasa: Dream Team for eight years after it was released. I played actively for the first three years, then stopped because of the pay-to-win mechanics. Later, I came back just to have some fun.</p>
-</div>
-
-<div class="project-card">
-<h3>Roberto Hongo (Dream Festival) Version</h3>
-<img src="others/1stDraw.jpg" class="big-data">
-
-<p>I got Roberto Hongo (Dream Festival version) from the Super Dream Festival before the Anniversary started.</p>
-</div>
-
-<div class="project-card">
-<h3>Hikaru Matsuyama (Super Star) Version</h3>
-<img src="others/2ndDraw.jpg" class="big-data">
-
-<p>I got Hikaru Matsuyama (Super Star version) from the Super Anniversary Transfer on my first draw, and when I continued drawing, I got nothing.</p>
-</div>
-
-<div class="project-card">
-<h3>Genzo Wakabayashi (Super Star) Version</h3>
-<img src="others/3rdDraw.jpg" class="big-data">
-
-<p>I got Genzo Wakabayashi (Super Star version) from the Super Anniversary Transfer on my first draw, and then I had more good luck.</p>
-</div>
-
-<div class="project-card">
-<h3>Tsubasa Ozora (Dream Festival) Version</h3>
-<img src="others/4thDraw.jpg" class="big-data">
-
-<p>I got Tsubasa Ozora (Festival version) from the Super Anniversary Transfer on my second draw, and then I got a duplicate Genzo Wakabayashi (Super Star version) on the third draw.</p>
-</div>
-
-<div class="project-card">
-<h3>Taro Misaki (Dream Festival) Version</h3>
-<img src="others/5thDraw.jpg" class="big-data">
-
-<p>I got Taro Misaki (Festival version) from the Super Anniversary Transfer on my fourth draw, and after that my luck ran out.</p>
-</div>
-
-<div class="project-card">
-<h3>Radunga (Dream Collection) Version</h3>
-<img src="others/6thDraw.jpg" class="big-data">
-
-<p>I got Radunga (Dream Collection version) from the Valentine’s Dream Transfer on my first draw, and then I continued to collect Dreamballs from the events so I could draw more to get Shun Nitta.</p>
-</div>
-
-<div class="project-card">
-<h3>Shun Nitta (Dream Festival) Version</h3>
-<img src="others/7thDraw1.jpg" class="big-data">
-<img src="others/7thDraw2.jpg" class="big-data">
-<img src="others/8thDraw.jpg" class="big-data">
-
-<p>So I finally got Shun Nitta (Dream Festival version) from the Valentine’s Dream Transfer on my 14th and 15th draws, so I decided to stop pulling and start saving Dreamballs from upcoming events to have a better chance of getting the player I want.</p>
-</div>
-
-<div class="project-card">
-<h3>Main Team</h3>
-<img src="others/Formation1-1.jpg" class="small-data">
-
-<p>This is my main team. The formation I'm using is: 4-2-3-1 (S) Gold Formation. I mainly use Japanese players, with two Brazilian players. I use three team skills to boost players’ stats by 92%. For bonds, I have 82% stat increase and 8% shield. I don’t have higher bond stats or meta players because I didn’t play the game a lot. If you play more, you can do more transfer draws, and with good luck you can build a much better team than your old one. I’m using Roberto Hongo (old Dream Festival version) because the company buffed him, and he’s playable right now.</p>
-</div>
-
-<div class="project-card">
-<h3>Formation</h3>
-<img src="others/Formation1-2.jpg" class="small-data">
-
-<p>This Gold Formation increases physical by 12% and stamina by 10% for Japanese and South American players.</p>
-</div>
-
-<div class="project-card">
-<h3>Second Team</h3>
-<img src="others/Formation2.jpg" class="small-data">
-
-<p>This is my second team. I’m using the same formation as my main team. I mainly use South American players, with three Japanese players. I use three team skills that boost stats by 90%. For bonds, I have an 82% stat increase and a 12.5% shield.</p>
-</div>
-
-<div class="project-card">
-<h3>Genzo Wakabayashi</h3>
-<img src="others/Wakabayashi1.jpg" class="big-data">
-
-<p>My favorite Goalkeeper of all time.</p>
-</div>
-
-<div class="project-card">
-<h3>Radunga</h3>
-<img src="others/Radunga1.jpg" class="big-data">
-
-<p>My favorite Defender of all time.</p>
-</div>
-
-<div class="project-card">
-<h3>Hikaru Matsuyama</h3>
-<img src="others/Matsuyama1.jpg" class="big-data">
-
-<p>My favorite Defensive Midfielder of all time.</p>
-</div>
-
-<div class="project-card">
-<h3>Tsubasa Ozora</h3>
-<img src="others/TsubasaOzora1.jpg" class="big-data">
-
-<p>My favorite Player of all time.</p>
-</div>
-
-<div class="project-card">
-<h3>Taro Misaki</h3>
-<img src="others/Misaki1.jpg" class="big-data">
-
-<p>My favorite Attack Midfielder of all time.</p>
-</div>
-
-<div class="project-card">
-<h3>Shun Nitta</h3>
-<img src="others/Nitta1.jpg" class="big-data">
-
-<p>My second favorite Striker of all time.</p>
-</div>
-
-<div class="project-card">
-<h3>Roberto Hongo</h3>
-<img src="others/RobertoHongo1.jpg" class="big-data">
-<img src="others/RobertoHongo2.jpg" class="big-data">
-
-<p>My favorite Legendary Player of all time.</p>
-</div>
-`
-                },
-                
+            items: [
                 {
                     id: 'traffic_lights',
                     title: 'Traffic Lights - Arduino',
@@ -625,13 +491,13 @@ playlist: [
      */
     function setupOthersPage(othersData) {
         const displayArea = document.getElementById('others-display-area');
-        if (!displayArea || !othersData.games || othersData.games.length === 0) return;
+        if (!displayArea || !othersData.items || othersData.items.length === 0) return;
 
-        const navButtonsHTML = othersData.games.map((game, index) =>
-            `<button class="others-nav-btn ${index === 0 ? 'active' : ''}" data-game-id="${game.id}">${game.title}</button>`
+        const navButtonsHTML = othersData.items.map((item, index) =>
+            `<button class="others-nav-btn ${index === 0 ? 'active' : ''}" data-item-id="${item.id}">${item.title}</button>`
         ).join('');
 
-        const firstGame = othersData.games[0];
+        const firstItem = othersData.items[0];
 
         const contentHTML = `
             <div class="others-nav-container">
@@ -639,27 +505,27 @@ playlist: [
             </div>
             <div class="others-content-display">
                 
-                <div id="others-game-description" class="others-content-text">
-                    ${firstGame.description}
+                <div id="others-item-description" class="others-content-text">
+                    ${firstItem.description}
                 </div>
             </div>
         `;
 
         displayArea.innerHTML = contentHTML;
 
-		if (firstGame.id === 'calculator') initializeCalculator();
-        if (firstGame.id === 'timer') initializeTimer();
-		 if (firstGame.id === 'music_playlist') initializeMusicPlayer(firstGame.playlist);
-		 if (firstGame.id === 'speedtest') initializeSpeedtest();
-		if (firstGame.id === 'performance') initializePerformanceTracker();
-		if (firstGame.id === 'Forex_Cross_Rates') initializeForexWidget();
+		if (firstItem.id === 'calculator') initializeCalculator();
+        if (firstItem.id === 'timer') initializeTimer();
+		 if (firstItem.id === 'music_playlist') initializeMusicPlayer(firstItem.playlist);
+		 if (firstItem.id === 'speedtest') initializeSpeedtest();
+		if (firstItem.id === 'performance') initializePerformanceTracker();
+		if (firstItem.id === 'Forex_Cross_Rates') initializeForexWidget();
 
         const navButtons = displayArea.querySelectorAll('.others-nav-btn');
         navButtons.forEach(button => {
             button.addEventListener('click', () => {
-                const gameId = button.getAttribute('data-game-id');
-                const gameData = othersData.games.find(g => g.id === gameId);
-                if (!gameData) return;
+                const itemId = button.getAttribute('data-item-id');
+                const itemData = othersData.items.find(i => i.id === itemId);
+                if (!itemData) return;
 				// Stop music if it's playing and we switch to something else
                 if (musicPlayerAudio) {
     musicPlayerAudio.pause();
@@ -667,18 +533,18 @@ playlist: [
     musicPlayerAudio = null;
 }
 
-                document.getElementById('others-game-description').innerHTML = gameData.description;
+                document.getElementById('others-item-description').innerHTML = itemData.description;
 
                 navButtons.forEach(btn => btn.classList.remove('active'));
                 button.classList.add('active');
 
 				 // If the selected item is the calculator, initialize its script
-                if (gameId === 'calculator') initializeCalculator();
-                if (gameId === 'timer') initializeTimer();
-				if (gameId === 'music_playlist') initializeMusicPlayer(gameData.playlist);
-				if (gameId === 'speedtest') initializeSpeedtest();
-				if (gameId === 'performance') initializePerformanceTracker();
-				if (gameId === 'Forex_Cross_Rates') initializeForexWidget();
+                if (itemId === 'calculator') initializeCalculator();
+                if (itemId === 'timer') initializeTimer();
+				if (itemId === 'music_playlist') initializeMusicPlayer(itemData.playlist);
+				if (itemId === 'speedtest') initializeSpeedtest();
+				if (itemId === 'performance') initializePerformanceTracker();
+				if (itemId === 'Forex_Cross_Rates') initializeForexWidget();
             });
         });
     }
