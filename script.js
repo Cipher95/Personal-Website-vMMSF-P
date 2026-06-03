@@ -411,6 +411,10 @@ playlist: [
                     image: 'others/Twitch-1440.webp',
                     description: `
                         <iframe src="https://player.twitch.tv/?channel=shrood&parent=cipher95.github.io" frameborder="0" allowfullscreen="true" scrolling="no" height="378" width="100%"></iframe>
+						<iframe src="https://www.twitch.tv/embed/shrood/chat?parent=cipher95.github.io"
+						height="500"
+						width="100%">
+						</iframe>
                     `
                 },{
                     id: 'Live_Stream_2',
@@ -418,6 +422,10 @@ playlist: [
                     image: 'others/Twitch-1440.webp',
                     description: `
                         <iframe src="https://player.twitch.tv/?channel=timthetatmanvods&parent=cipher95.github.io" frameborder="0" allowfullscreen="true" scrolling="no" height="378" width="100%"></iframe>
+						<iframe src="https://www.twitch.tv/embed/timthetatmanvods/chat?parent=cipher95.github.io"
+						height="500"
+						width="100%">
+						</iframe>
                     `
                 },{
                     id: 'Live_Stream_3',
@@ -425,6 +433,10 @@ playlist: [
                     image: 'others/Twitch-1440.webp',
                     description: `
                         <iframe src="https://player.twitch.tv/?channel=20xxpo&parent=cipher95.github.io" frameborder="0" allowfullscreen="true" scrolling="no" height="378" width="100%"></iframe>
+						<iframe src="https://www.twitch.tv/embed/20xxpo/chat?parent=cipher95.github.io"
+						height="500"
+						width="100%">
+						</iframe>
                     `
                 }
             ]
