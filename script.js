@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
 				 <div class="project-card">
                     <h2>Cipher | Personal Website</h2>
                     <p>This is my main Personal Website.</p>
-                    <a href="https://cipher95.github.io/Personal-Website/" target="_blank">View Project</a>
+                    <a href="https://cipher.infinityfree.io/" target="_blank">View Project</a>
                 </div>
 				<br/>
 				<div class="project-card">
@@ -152,12 +152,12 @@ document.addEventListener('DOMContentLoaded', () => {
             ]
         },
         gemini: {
-            title: "Gemini AI",
+            title: "AI Agent",
             image: "UNMMSF3Gemini.webp", // A futuristic AI-themed image
             content: `
-                <p>Interact directly with a powerful AI. This interface is connected to the Gemini 1.5 Flash model via a secure backend.</p>
+                <p>Interact directly with my custom AI Agent, powered by Google's Gemini 3.5 Flash model. It has been specially equipped with knowledge about my background, web development projects, and retro gaming archives. Ask it questions about my work, request coding assistance, brainstorm ideas, or just have a chat with a highly intelligent assistant!</p>
                 <div id="gemini-container">
-                    <textarea id="gemini-prompt" placeholder="Enter your prompt for Gemini..."></textarea>
+                    <textarea id="gemini-prompt" placeholder="Enter your prompt for the AI Agent..."></textarea>
                     <button id="gemini-submit-btn">Send to AI</button>
                     <div id="gemini-response">The AI's response will appear here...</div>
                 </div>
@@ -1211,7 +1211,7 @@ musicPlayerAudio = new Audio(); // Now it's safe to create the new player
     }
 
    
-    // --- GEMINI 2.5 PRO API FUNCTIONALITY ---
+    // --- AI AGENT (GEMINI) API FUNCTIONALITY ---
     async function handleGeminiPrompt() {
         const promptInput = document.getElementById('gemini-prompt');
         const responseContainer = document.getElementById('gemini-response');
@@ -1225,14 +1225,19 @@ musicPlayerAudio = new Audio(); // Now it's safe to create the new player
         submitBtn.textContent = "THINKING...";
         responseContainer.textContent = "Connecting to the AI, please wait...";
         try {
-            const response = await fetch('https://954927c1-6f5f-4500-a6c4-b6c653965ac8-00-2f1g5gu0csdjw.pike.replit.dev/api/gemini', {
+            const response = await fetch('https://cipher-personal.infinityfree.io/gemini_api.php', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ prompt: prompt }),
             });
             if (!response.ok) throw new Error(`Server error! Status: ${response.status}`);
             const data = await response.json();
-            responseContainer.textContent = data.response;
+             // Check if there's an error from the PHP logic (like CORS blocking)
+            if (data.error) {
+                responseContainer.textContent = data.error;
+            } else {
+                responseContainer.textContent = data.response;
+            }
         } catch (error) {
             console.error('Error fetching Gemini response:', error);
             responseContainer.textContent = 'An error occurred. Please make sure the backend server is running and try again.';
