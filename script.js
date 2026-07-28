@@ -1210,71 +1210,7 @@ musicPlayerAudio = new Audio(); // Now it's safe to create the new player
         window.scrollTo({ top: document.documentElement.scrollHeight, behavior: 'smooth' });
     }
 
-     // --- CHATBOT FUNCTIONALITY ---
-    const chatbotToggleBtn = document.getElementById('chatbot-toggle-btn');
-    const chatbotPopup = document.getElementById('chatbot-popup');
-    const chatbotCloseBtn = document.getElementById('chatbot-close-btn');
-    const chatbotMessages = document.getElementById('chatbot-messages');
-    const chatbotInput = document.getElementById('chatbot-input');
-    const chatbotSendBtn = document.getElementById('chatbot-send-btn');
-
-    chatbotToggleBtn.addEventListener('click', () => {
-        chatbotPopup.classList.toggle('active');
-        if (chatbotPopup.classList.contains('active') && chatbotMessages.children.length === 0) {
-            setTimeout(() => {
-                addMessage("Hello! I'm CipherBot. Ask me anything about this site.", 'bot');
-            }, 300);
-        }
-    });
-
-    chatbotCloseBtn.addEventListener('click', () => {
-        chatbotPopup.classList.remove('active');
-    });
-
-    chatbotSendBtn.addEventListener('click', handleUserMessage);
-    chatbotInput.addEventListener('keypress', (e) => {
-        if (e.key === 'Enter') {
-            handleUserMessage();
-        }
-    });
-
-    function handleUserMessage() {
-        const message = chatbotInput.value.trim();
-        if (message) {
-            addMessage(message, 'user');
-            chatbotInput.value = '';
-            getBotResponse(message);
-        }
-    }
-
-    function addMessage(message, sender) {
-        const messageElement = document.createElement('div');
-        messageElement.classList.add('chatbot-message', `${sender}-message`);
-        messageElement.innerHTML = message;
-        chatbotMessages.appendChild(messageElement);
-        chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
-    }
-
-    function getBotResponse(userMessage) {
-        const lowerCaseMessage = userMessage.toLowerCase();
-        let botMessage = "I'm not sure how to respond. Try asking about 'Cipher', 'websites', or 'videos'.";
-        if (lowerCaseMessage.includes('hello') || lowerCaseMessage.includes('hi')) botMessage = "Hello! I'm CipherBot. How can I help you today?";
-        if (lowerCaseMessage.includes('cipher')) botMessage = "Cipher is a web developer and digital archivist, passionate about creating new web experiences and preserving classic video games.";
-        if (lowerCaseMessage.includes('website') || lowerCaseMessage.includes('project')) botMessage = "Cipher has worked on several projects, including websites for Mega Man Star Force and Ace Combat Zero. You can navigate to the 'Websites' page to see them all.";
-        if (lowerCaseMessage.includes('video')) botMessage = "You can find a collection of retro gaming longplays and clips on the 'Videos' page.";
-        if (lowerCaseMessage.includes('thank')) botMessage = "You're welcome!";
-		if (lowerCaseMessage.includes('how are you')) botMessage = "I'm a set of scripts and code, but I'm functioning perfectly! Thanks for asking. How can I assist you?";
-		if (lowerCaseMessage.includes('help') || lowerCaseMessage.includes('what can i ask')) botMessage = "You can ask me about Cipher, his web development projects, his video archives, or specific games like 'Mega Man' and 'Ace Combat'.";
-		if (lowerCaseMessage.includes('mega man')) botMessage = "Cipher has created two fan websites for the Mega Man Star Force series. You can find links to them on the 'Websites' page.";
-		if (lowerCaseMessage.includes('ace combat')) botMessage = "There's an immersive, story-focused website for 'Ace Combat Zero: The Belkan War' in the showcase. He also has longplays of several Ace Combat games in the 'Videos' section.";
-		if (lowerCaseMessage.includes('mechwarrior')) botMessage = "Yes, there is a retro-themed tribute site for 'MechWarrior 2: 31st Century Combat'. It even has the classic MIDI soundtrack!";
-		if (lowerCaseMessage.includes('skill') || lowerCaseMessage.includes('technolog')) botMessage = "Cipher specializes in front-end web development, creating dynamic and intelligent websites. The projects showcase skills in HTML, CSS, JavaScript, and UI/UX design.";
-		if (lowerCaseMessage.includes('contact') || lowerCaseMessage.includes('email')) botMessage = "I don't have access to Cipher's personal contact information. For now, the best way to see his work is by exploring this website.";
-		if (lowerCaseMessage.includes('bye') || lowerCaseMessage.includes('goodbye')) botMessage = "Goodbye! Feel free to ask if you have more questions.";
-        
-        setTimeout(() => { addMessage(botMessage, 'bot'); }, 500);
-    }
-
+   
     // --- GEMINI 2.5 PRO API FUNCTIONALITY ---
     async function handleGeminiPrompt() {
         const promptInput = document.getElementById('gemini-prompt');
